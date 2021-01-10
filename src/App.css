@@ -1,0 +1,41 @@
+#content-container {
+  display: flex;
+  margin: 20px;
+}
+
+#menu {
+  width: 20%;
+}
+
+#project-content {
+  height: 100vh;
+  width: 80%;
+}
+
+#project-content div iframe {
+  width: 70%;
+  height: 70%;
+}
+
+#title {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#projects a {
+  text-decoration: none;
+  color:black;
+}
+
+#projects a:visited {
+  color: black;
+}
+
+#projects a:hover {
+  background-color: lightpink;
+}   /* Mouse over link */
+/* #projects a:active {color:#0000FF;}  Selected link   */
+
+#projects div {
+  margin-bottom: 5px;
+}

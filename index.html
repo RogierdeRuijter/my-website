@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Rogier de Ruijter</title>
+  <meta name="description" content="My website">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="reset.css">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <style>
+    #content-container {
+      display: flex;
+      margin: 20px;
+    }
+
+    #menu {
+      width: 20%;
+    }
+
+    #project-content {
+      height: 100vh;
+      width: 80%;
+    }
+
+    #project-content div iframe {
+      width: 70%;
+      height: 70%;
+    }
+
+    #title {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="content-container">
+    <div id="menu">
+      <div id="title">
+        Rogier de Ruijter
+      </div>
+      <div id="projects">
+        <div>
+          <a href="#fish-race">Fish race</a>
+        </div>
+        <a href="#circle-game">Circle game</a>
+      </div>
+    </div>
+    <div id="project-content">
+      <div id="project-fish-race">
+        <iframe src="https://itisafishrace.xyz" loading="lazy"></iframe>
+      </div>
+      <div id="project-circle-game">
+        <iframe src="https://circle-ga.me" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.addEventListener("hashchange", () => {
+      hideAllCurrentlyVisibleProjects();
+
+      const newHash = window.location.hash;
+      
+      const elementSelector = 'project-' + newHash.replace('#', '');
+
+      const element = document.getElementById(elementSelector);
+      const iframe = document.create
+    });
+
+    const hideAllCurrentlyVisibleProjects = () => {
+      const projectContent = document.getElementById('project-content');
+      for (let i = 0; i < projectContent.children.length; i++) {
+        projectContent.children[i].style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

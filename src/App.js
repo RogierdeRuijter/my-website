@@ -12,10 +12,10 @@ function App() {
         </div>
         <div id="projects">
           <div>
-            <a href="/fish-race">Fish race</a>
+            <a href="fish-race">Fish race</a>
           </div>
           <div>
-            <a href="/circle-game">Circle game</a>
+            <a href="circle-game">Circle game</a>
           </div>
         </div>
       </div>

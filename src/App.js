@@ -8,7 +8,7 @@ function App() {
     <div id="content-container">
       <div id="menu">
         <div id="title">
-          Rogier de Ruijter1
+          Rogier de Ruijter
         </div>
         <div id="projects">
           <div>

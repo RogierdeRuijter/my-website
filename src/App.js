@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import CircleGame from './projects/CircleGame';
+import FishRace from './projects/FishRace';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="content-container">
+      <div id="menu">
+        <div id="title">
+          Rogier de Ruijter
+        </div>
+        <div id="projects">
+          <div>
+            <a href="/fish-race">Fish race</a>
+          </div>
+          <div>
+            <a href="/circle-game">Circle game</a>
+          </div>
+        </div>
+      </div>
+      <div id="project-content">
+      <BrowserRouter>
+        <Switch>
+          <Route path="/fish-race">
+            <FishRace />
+          </Route>
+          <Route path="/circle-game">
+            <CircleGame />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
+  </div>
   );
 }
 

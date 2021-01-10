@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import CircleGame from './projects/CircleGame';
 import FishRace from './projects/FishRace';
 
-function App() {
+const App = () => {
   return (
     <div id="content-container">
       <div id="menu">

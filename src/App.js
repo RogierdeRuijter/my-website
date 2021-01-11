@@ -1,26 +1,45 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation, useHistory, Link } from 'react-router-dom';
 import CircleGame from './projects/CircleGame';
 import FishRace from './projects/FishRace';
+import SleepingSealsWithCelebrityQuotes from './projects/SleepingSeals';
+import { useEffect, useState } from 'react';
 
-const App = () => {
+const App = ({}) => {
+  const location = useLocation();
+  const history = useHistory();
+  const [pathname, setPathname] = useState('');
+  
+  useEffect(() => {
+    setPathname(location.pathname);
+
+    if (location.pathname === '/') {
+      history.push('/fish-race');
+    }
+  }, [location]);
+
   return (
     <div id="content-container">
       <div id="menu">
         <div id="title">
           Rogier de Ruijter
         </div>
-        <div id="projects">
-          <div>
-            <a href="fish-race">Fish race</a>
-          </div>
-          <div>
-            <a href="circle-game">Circle game</a>
-          </div>
-        </div>
+        <ul id="projects">
+          <li>
+            <Link className={ pathname === '/fish-race' ? 'active' : '' } to="/fish-race">Fish race</Link>
+          </li>
+          <li>
+            <Link className={ pathname === '/circle-game' ? 'active' : '' } to="/circle-game">Circle game</Link>
+          <li>
+          </li>
+            <Link className={ pathname === '/sleeping-seals-with-celebrity-quotes' ? 'active' : '' } 
+              to="/sleeping-seals-with-celebrity-quotes">
+                Sleeping Seals with Celebrity Quotes
+            </Link>
+          </li>
+        </ul>
       </div>
       <div id="project-content">
-      <BrowserRouter>
         <Switch>
           <Route path="/fish-race">
             <FishRace />
@@ -28,8 +47,10 @@ const App = () => {
           <Route path="/circle-game">
             <CircleGame />
           </Route>
+          <Route path="/sleeping-seals-with-celebrity-quotes">
+            <SleepingSealsWithCelebrityQuotes />
+          </Route>
         </Switch>
-      </BrowserRouter>
     </div>
   </div>
   );

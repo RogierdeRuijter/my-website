@@ -13,13 +13,27 @@
 }
 
 #project-content div iframe {
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 100%;
 }
 
 #title {
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+#projects {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+#projects {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+#projects .active {
+  font-weight: bold;
 }
 
 #projects a {
@@ -33,9 +47,9 @@
 
 #projects a:hover {
   background-color: lightpink;
-}   /* Mouse over link */
-/* #projects a:active {color:#0000FF;}  Selected link   */
+}
 
 #projects div {
   margin-bottom: 5px;
 }
+

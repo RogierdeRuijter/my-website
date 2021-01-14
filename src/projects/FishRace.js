@@ -1,4 +1,4 @@
-import githubLogo from '../GitHub-Mark-64px.png';
+import githubLogo from '../assets/GitHub-Mark-64px.png';
 
 function FishRace() {
   return (

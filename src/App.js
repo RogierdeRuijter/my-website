@@ -34,6 +34,9 @@ const App = ({}) => {
             <Link className={ pathname === '/circle-game' ? 'active' : '' } to="/circle-game">Circle game</Link>
           <li>
           <li>
+            <Link className={ pathname === '/montepoeli' ? 'active' : '' } to="/montepoeli">Montepoeli</Link>
+          </li>
+          <li>
             <Link className={ pathname === '/get-low' ? 'active' : '' } to="/get-low">Get low</Link>
           </li>
           </li>
@@ -41,9 +44,6 @@ const App = ({}) => {
               to="/sleeping-seals-with-celebrity-quotes">
                 Sleeping Seals with Celebrity Quotes
             </Link>
-          </li>
-          <li>
-            <Link className={ pathname === '/montepoeli' ? 'active' : '' } to="/montepoeli">Montepoeli</Link>
           </li>
         </ul>
       </div>
@@ -55,14 +55,14 @@ const App = ({}) => {
           <Route path="/circle-game">
             <CircleGame />
           </Route>
+          <Route path="/montepoeli">
+            <Montepoeli />
+          </Route>
           <Route path="/get-low">
             <GetLow />
           </Route>
           <Route path="/sleeping-seals-with-celebrity-quotes">
             <SleepingSealsWithCelebrityQuotes />
-          </Route>
-          <Route path="/montepoeli">
-            <Montepoeli />
           </Route>
         </Switch>
     </div>

@@ -5,6 +5,7 @@ import FishRace from './projects/FishRace';
 import SleepingSealsWithCelebrityQuotes from './projects/SleepingSeals';
 import { useEffect, useState } from 'react';
 import GetLow from './projects/GetLow';
+import Montepoeli from './projects/Montepoeli/Montepoeli';
 
 const App = ({}) => {
   const location = useLocation();
@@ -41,6 +42,9 @@ const App = ({}) => {
                 Sleeping Seals with Celebrity Quotes
             </Link>
           </li>
+          <li>
+            <Link className={ pathname === '/montepoeli' ? 'active' : '' } to="/montepoeli">Montepoeli</Link>
+          </li>
         </ul>
       </div>
       <div id="project-content">
@@ -56,6 +60,9 @@ const App = ({}) => {
           </Route>
           <Route path="/sleeping-seals-with-celebrity-quotes">
             <SleepingSealsWithCelebrityQuotes />
+          </Route>
+          <Route path="/montepoeli">
+            <Montepoeli />
           </Route>
         </Switch>
     </div>

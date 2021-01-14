@@ -1,0 +1,21 @@
+.content-container {
+  padding-top: 30px;
+}
+
+.footer {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.rounded-corners {
+  border-radius: 40px;
+}
+
+.iphone {
+  height: 600px;
+}
+
+.spacer {
+  padding-right: 10px;
+}

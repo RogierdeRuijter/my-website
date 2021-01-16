@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch, useLocation, useHistory, Link } from 'react-router-dom';
 import CircleGame from './projects/CircleGame';
 import FishRace from './projects/FishRace';
-import SleepingSealsWithCelebrityQuotes from './projects/SleepingSeals';
+import SleepingTumblrSeals from './projects/SleepingSeals';
 import { useEffect, useState } from 'react';
 import GetLow from './projects/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';

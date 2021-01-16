@@ -15,7 +15,7 @@ function Montepoeli() {
           A website build for the chess club. <br/>
           The chess club was founded in Montepulciano, Italy. <br/>
           The website is an attempt to keep the spirit alive from this vacation. <br/>
-          The website is mainly used as a PWA and is my breeding ground for exploring non functional features. <br/>
+          It is mainly used as a PWA and is my breeding ground for exploring non functional features. <br/>
           Semantic release, you will always be my favourite piece of software ever. Even if no one else thinks so.
         </div>
       </div>

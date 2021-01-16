@@ -12,7 +12,11 @@ function Montepoeli() {
         <img className="iphone rounded-corners spacer" src={montepoeliAddGame}></img>
         <img className="iphone rounded-corners" src={montepoeliAddGameFilled}></img>
         <div className="footer">
-          A website build for the chess club . The chess club was founded in Montepulciano, Italy. The website is an attempt to keep the spirit alive from this vacation. The website is mainly used as a PWA and is my breeding ground for exploring non functional features. Semantic release, you will always be my favourite piece of software ever. Even if no one else thinks so.
+          A website build for the chess club. <br/>
+          The chess club was founded in Montepulciano, Italy. <br/>
+          The website is an attempt to keep the spirit alive from this vacation. <br/>
+          The website is mainly used as a PWA and is my breeding ground for exploring non functional features. <br/>
+          Semantic release, you will always be my favourite piece of software ever. Even if no one else thinks so.
         </div>
       </div>
     </>

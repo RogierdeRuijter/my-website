@@ -30,11 +30,6 @@
   padding-inline-start: 0;
 }
 
-#projects {
-  list-style: none;
-  padding-inline-start: 0;
-}
-
 #projects .active {
   font-weight: bold;
 }
@@ -52,7 +47,6 @@
   background-color: lightpink;
 }
 
-#projects div {
-  margin-bottom: 5px;
+#projects li {
+  margin-bottom: 3px;
 }
-

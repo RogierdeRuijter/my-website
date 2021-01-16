@@ -6,6 +6,7 @@ import SleepingTumblrSeals from './projects/SleepingSeals';
 import { useEffect, useState } from 'react';
 import GetLow from './projects/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
+import Info from './Info/Info';
 
 const App = ({}) => {
   const location = useLocation();
@@ -45,6 +46,12 @@ const App = ({}) => {
                 Sleeping Tumblr Seals
             </Link>
           </li>
+          <li style={{marginTop: '100px'}}>
+            <Link className={ pathname === '/info' ? 'active' : '' } 
+              to="/info">
+                Info
+            </Link>
+          </li>
         </ul>
       </div>
       <div id="project-content">
@@ -63,6 +70,9 @@ const App = ({}) => {
           </Route>
           <Route path="/sleeping-tumblr-seals">
             <SleepingTumblrSeals />
+          </Route>
+          <Route path="/info">
+            <Info />
           </Route>
         </Switch>
     </div>

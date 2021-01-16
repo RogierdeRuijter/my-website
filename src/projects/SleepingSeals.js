@@ -4,7 +4,7 @@ function SleepingTumblrSeals() {
       <iframe src="https://sleepingsealswithcelebrityquotes.com" frameBorder="0"></iframe>
       <div style={{marginTop: '50px', fontStyle: 'italic'}}>
         These are memes for sleeping seals. <br/>
-        Thanks Jonna for creating this with me and eating way much candy for one night.
+        Thanks Jonna for creating this with me and eating way too much candy for one night.
       </div>
     </div>
   );

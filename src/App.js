@@ -32,14 +32,14 @@ const App = ({}) => {
           </li>
           <li>
             <Link className={ pathname === '/circle-game' ? 'active' : '' } to="/circle-game">Circle game</Link>
-          <li>
+          </li>
           <li>
             <Link className={ pathname === '/montepoeli' ? 'active' : '' } to="/montepoeli">Montepoeli</Link>
           </li>
           <li>
             <Link className={ pathname === '/get-low' ? 'active' : '' } to="/get-low">Get low</Link>
           </li>
-          </li>
+          <li>
             <Link className={ pathname === '/sleeping-tumblr-seals' ? 'active' : '' } 
               to="/sleeping-tumblr-seals">
                 Sleeping Tumblr Seals

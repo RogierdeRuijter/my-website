@@ -40,9 +40,9 @@ const App = ({}) => {
             <Link className={ pathname === '/get-low' ? 'active' : '' } to="/get-low">Get low</Link>
           </li>
           </li>
-            <Link className={ pathname === '/sleeping-seals-with-celebrity-quotes' ? 'active' : '' } 
-              to="/sleeping-seals-with-celebrity-quotes">
-                Sleeping Seals with Celebrity Quotes
+            <Link className={ pathname === '/sleeping-tumblr-seals' ? 'active' : '' } 
+              to="/sleeping-tumblr-seals">
+                Sleeping Tumblr Seals
             </Link>
           </li>
         </ul>
@@ -61,8 +61,8 @@ const App = ({}) => {
           <Route path="/get-low">
             <GetLow />
           </Route>
-          <Route path="/sleeping-seals-with-celebrity-quotes">
-            <SleepingSealsWithCelebrityQuotes />
+          <Route path="/sleeping-tumblr-seals">
+            <SleepingTumblrSeals />
           </Route>
         </Switch>
     </div>

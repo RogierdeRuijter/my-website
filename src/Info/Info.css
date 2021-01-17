@@ -1,12 +1,19 @@
 .info-container {
     background-color: pink;
-    max-width: 50%;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    width: 500px;
+    max-width: 100%;
+    padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
 }
 
-.special-thanks ul li {
-    margin-top: 5px;
+.special-thanks li {
+    margin-bottom: 5px;
+}
+
+ul
+{   
+    margin-block-start: 5px;
+    padding-inline-start: 10px;
+    list-style: square inside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');
 }

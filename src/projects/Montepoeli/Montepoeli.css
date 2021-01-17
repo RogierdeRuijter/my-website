@@ -1,5 +1,6 @@
-.content-container {
-  padding-top: 30px;
+#montepoeli-content-container {
+  padding-top: 20px;
+  overflow: scroll;
 }
 
 .footer {

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import GetLow from './projects/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
 import Info from './Info/Info';
+import Julia from './projects/Julia/Julia';
 
 const App = ({}) => {
   const location = useLocation();
@@ -46,6 +47,12 @@ const App = ({}) => {
                 Sleeping Tumblr Seals
             </Link>
           </li>
+          <li>
+            <Link className={ pathname === '/julia' ? 'active' : '' } 
+              to="/julia">
+                Julia
+            </Link>
+          </li>
           <li style={{marginTop: '100px'}}>
             <Link className={ pathname === '/info' ? 'active' : '' } 
               to="/info">
@@ -70,6 +77,9 @@ const App = ({}) => {
           </Route>
           <Route path="/sleeping-tumblr-seals">
             <SleepingTumblrSeals />
+          </Route>
+          <Route path="/julia">
+            <Julia />
           </Route>
           <Route path="/info">
             <Info />

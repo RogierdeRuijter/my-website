@@ -42,15 +42,15 @@ const App = ({}) => {
             <Link className={ pathname === '/get-low' ? 'active' : '' } to="/get-low">Get low</Link>
           </li>
           <li>
-            <Link className={ pathname === '/julia' ? 'active' : '' } 
-              to="/julia">
-                Julia
-            </Link>
-          </li>
-          <li>
             <Link className={ pathname === '/sleeping-tumblr-seals' ? 'active' : '' } 
               to="/sleeping-tumblr-seals">
                 Sleeping Tumblr Seals
+            </Link>
+          </li>
+          <li>
+            <Link className={ pathname === '/julia' ? 'active' : '' } 
+              to="/julia">
+                Julia
             </Link>
           </li>
           <li style={{marginTop: '100px'}}>
@@ -75,11 +75,11 @@ const App = ({}) => {
           <Route path="/get-low">
             <GetLow />
           </Route>
-          <Route path="/julia">
-            <Julia />
-          </Route>
           <Route path="/sleeping-tumblr-seals">
             <SleepingTumblrSeals />
+          </Route>
+          <Route path="/julia">
+            <Julia />
           </Route>
           <Route path="/info">
             <Info />

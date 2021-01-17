@@ -19,3 +19,7 @@
 .spacer {
   padding-right: 10px;
 }
+
+#montepoeli-content-container img {
+  max-width: 100%;
+}

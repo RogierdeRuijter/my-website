@@ -7,7 +7,7 @@ import './Montepoeli.css';
 function Montepoeli() {
   return (
     <>
-      <div className="content-container" style={{width: '100%', height: '70%'}}>
+      <div className="montepoeli-content-container" style={{width: '100%', height: '70%'}}>
         <img className="iphone rounded-corners spacer" src={montepoeliHome}></img>
         <img className="iphone rounded-corners spacer" src={montepoeliAddGame}></img>
         <img className="iphone rounded-corners" src={montepoeliAddGameFilled}></img>

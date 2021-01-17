@@ -11,8 +11,7 @@
     margin-bottom: 5px;
 }
 
-ul
-{   
+.special-thanks {   
     margin-block-start: 5px;
     padding-inline-start: 10px;
     list-style: square inside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');

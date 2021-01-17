@@ -1,3 +1,12 @@
+.info-container {
+    background-color: pink;
+    max-width: 50%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
 .special-thanks ul li {
     margin-top: 5px;
 }

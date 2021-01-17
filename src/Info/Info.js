@@ -2,8 +2,8 @@ import './Info.css';
 
 function Info() {
   return (
-    <>
-      <div style={{paddingTop: '30px'}}>
+    <div className="info-container">
+      <div style={{paddingTop: '10px'}}>
         I am forever grateful for everyone I have worked with, thank you so much.
       </div>
       
@@ -34,7 +34,7 @@ function Info() {
       <div style={{marginTop: '30px'}}>
         You have made me to what I am.
       </div>
-    </>
+    </div>
   );
 }
 

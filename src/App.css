@@ -31,17 +31,17 @@
   padding-right: 20px;
 }
 
-#projects .active {
-  font-weight: bold;
-}
-
-#projects a {
+#menu a {
   text-decoration: none;
   color:black;
 }
 
-#projects a:visited {
+#menu a:visited {
   color: black;
+}
+
+#projects .active {
+  font-weight: bold;
 }
 
 #projects a:hover {

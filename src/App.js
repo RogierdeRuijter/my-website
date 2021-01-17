@@ -26,7 +26,9 @@ const App = ({}) => {
     <div id="content-container">
       <div id="menu">
         <div id="title">
-          Rogier de Ruijter
+          <Link to="/fish-race">
+            Rogier de Ruijter
+          </Link>
         </div>
         <ul id="projects">
           <li>

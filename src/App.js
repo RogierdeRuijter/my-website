@@ -55,7 +55,7 @@ const App = ({}) => {
                 Julia
             </Link>
           </li>
-          <li style={{marginTop: '100px'}}>
+          <li style={{marginTop: '25px', fontSize: '14px'}}>
             <Link className={ pathname === '/info' ? 'active' : '' } 
               to="/info">
                 Info

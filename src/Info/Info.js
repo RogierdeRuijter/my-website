@@ -12,7 +12,7 @@ function Info() {
       <ul className="special-thanks">
         <li>
           Lourens, your love for development radiates. 
-          It touched my soul in main ways I can't describe.
+          It touched my soul in many ways I can't describe.
           Thanks for giving me the love for updates.
         </li>
         <li>

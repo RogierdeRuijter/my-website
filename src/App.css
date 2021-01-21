@@ -1,6 +1,11 @@
+#content-container {
+  display: flex;
+}
+
 #menu {
+  box-sizing: border-box;
   width: 200px;
-  /* max-width: 25%; */
+  max-width: 30%;
   padding-top: 10px;
   padding-left: 10px;
   position: fixed;
@@ -9,12 +14,12 @@
 }
 
 #project-content {
-  /* padding-right: 20px; */
+  box-sizing: border-box;
+  margin-left: min(30%, 200px);
   height: 100vh;
-  width: calc(100% - 200px - 20px);
-  margin-left: 200px;
-  padding-right: 20px;
-  max-width: 1200px;  
+  width: max(70%, calc(100% - 200px));
+  padding-right: min(20px, 5%);
+  max-width: 1200px;
 }
 
 #project-content div iframe {
@@ -30,7 +35,7 @@
 #projects {
   list-style: none;
   padding-inline-start: 0;
-  padding-right: 20px;
+  /* padding-right: 20px; */
 }
 
 #menu a {

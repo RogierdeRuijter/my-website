@@ -1,10 +1,10 @@
 import './App.css';
 import { Route, Switch, useLocation, useHistory, Link } from 'react-router-dom';
-import CircleGame from './projects/CircleGame';
-import FishRace from './projects/FishRace';
-import SleepingTumblrSeals from './projects/SleepingSeals';
+import CircleGame from './projects/CircleGame/CircleGame';
+import FishRace from './projects/FishRace/FishRace';
+import SleepingTumblrSeals from './projects/SleepingSeals/SleepingSeals';
 import { useEffect, useState } from 'react';
-import GetLow from './projects/GetLow';
+import GetLow from './projects/GetLow/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
 import Info from './Info/Info';
 import Julia from './projects/Julia/Julia';

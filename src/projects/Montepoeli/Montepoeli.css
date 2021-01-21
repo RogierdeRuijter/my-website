@@ -4,7 +4,7 @@
 }
 
 .footer {
-  max-width: 50%;
+  width: min(100%, 500px);
   margin-left: auto;
   margin-top: 100px;
   margin-bottom: 30px;

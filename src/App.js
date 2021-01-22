@@ -64,9 +64,9 @@ const App = ({}) => {
           </li>
         </ul>
       </div>
-      <div id="project-content">
-        <Switch>
-        <Route path="/welcome">
+      {/* <div id="project-content"> */}
+        {/* <Switch>
+          <Route path="/welcome">
             <Welcome />
           </Route>
           <Route path="/fish-race">
@@ -90,7 +90,17 @@ const App = ({}) => {
           <Route path="/info">
             <Info />
           </Route>
-        </Switch>
+        </Switch> */}
+    {/* </div> */}
+    <div id="project-content">
+      <Welcome />
+      <FishRace />
+      <CircleGame />
+      <Montepoeli />
+      <GetLow />
+      <SleepingTumblrSeals />
+      <Julia />
+      <Info />
     </div>
   </div>
   );

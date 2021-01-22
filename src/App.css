@@ -16,7 +16,6 @@
 #project-content {
   box-sizing: border-box;
   margin-left: min(30%, 200px);
-  height: 100vh;
   width: max(70%, calc(100% - 200px));
   padding-right: min(20px, 3%);
   max-width: 1200px;

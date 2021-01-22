@@ -33,13 +33,10 @@ const App = ({}) => {
 
     if (location.pathname === '/') {
       history.push('/welcome');
-    }
+    }    
   }, [location]);
   const onUpdateMethod = (element) => {
-    console.log('in onUpdateMethod');
-    console.log(element);
     if (element && element.id === sections[1]) {
-      console.log(element.id);
       setShow(true);
     }
   }
@@ -70,25 +67,25 @@ const App = ({}) => {
       </div>
     <div id="project-content">
       <Welcome />
-      <div id={sections[0]}>
+      <div className="empty-spacing" id={sections[0]}>
         <FishRace />
       </div>
-      <div id={sections[1]}>
+      <div className="empty-spacing" id={sections[1]}>
         <CircleGame showWebsite={show}/>
       </div>
-      <div id={sections[2]}>
+      <div className="empty-spacing" id={sections[2]}>
         <Montepoeli />
       </div>
-      <div id={sections[3]}>
+      <div className="empty-spacing" id={sections[3]}>
         <GetLow />
       </div>
-      <div id={sections[4]}>
+      <div className="empty-spacing" id={sections[4]}>
         <SleepingTumblrSeals />
       </div>
-      <div id={sections[5]}>
+      <div className="empty-spacing" id={sections[5]}>
         <Julia />
       </div>
-      <div id={sections[6]}>
+      <div className="empty-spacing" id={sections[6]}>
         <Info />
       </div>
     </div>

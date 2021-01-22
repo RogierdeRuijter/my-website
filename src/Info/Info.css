@@ -1,4 +1,13 @@
 .info-container {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%; 
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+
+.info-content {
     background-color: pink;
     width: 500px;
     max-width: 100%;

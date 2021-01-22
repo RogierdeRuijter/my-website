@@ -2,7 +2,7 @@ import './Welcome.css';
 
 function Welcome() {
   return (
-    <div style={{width: '100%', height: '100%'}}>
+    <div id="welcome-container">
       <div style={{fontSize: '20px'}}>
         Welcome
       </div>

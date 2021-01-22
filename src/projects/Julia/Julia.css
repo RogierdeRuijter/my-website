@@ -1,3 +1,16 @@
-#julia-container #content-container {
-  background-color: blue;
+#julia-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%; 
+  padding-top: 20px;
+  padding-bottom: 20px; 
+  border-bottom: 1px solid black;
+}
+
+#julia-container iframe {
+  width: 100%; 
+  /* TODO: find a dynamic way to get this size */
+  height: 700vh;
 }

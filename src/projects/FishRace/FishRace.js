@@ -3,7 +3,7 @@ import './FishRace.css';
 function FishRace() {
   return (
     <div id="fish-race-container">
-      <iframe src="https://itisafishrace.xyz" frameBorder="0"></iframe>
+      <iframe src="https://itisafishrace.xyz" loading="lazy" frameBorder="0"></iframe>
       <div id="description">
         Created during a night filled with drinks by Daniel and me. 
         Later refined by the people mentioned before and Joost. <br/>

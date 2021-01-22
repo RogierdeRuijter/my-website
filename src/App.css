@@ -1,7 +1,7 @@
 #content-container {
   display: flex;
 }
-
+/* TODO: rename duplicate selector name */
 #menu {
   box-sizing: border-box;
   width: 200px;
@@ -11,20 +11,29 @@
   position: fixed;
   left: 0;
   top: 0;
+  opacity: 0;
+}
+
+.fade-in-animation {
+  animation: 1s ease-in fadeIn forwards;
+  -webkit-animation: 1s ease-in fadeIn forwards;
 }
 
 #project-content {
   box-sizing: border-box;
-  margin-left: min(30%, 200px);
-  height: 100vh;
-  width: max(70%, calc(100% - 200px));
+  padding-left: min(30%, 200px);
+  width: max(100%, calc(100% - 200px));
   padding-right: min(20px, 3%);
   max-width: 1200px;
 }
-
-#project-content div iframe {
+/* TODO: move this css style to the individual components */
+/* #project-content div iframe {
   width: 100%;
   height: 100%;
+} */
+
+#project-content .empty-spacing {
+  min-height: 100px;
 }
 
 #title {
@@ -32,29 +41,46 @@
   margin-bottom: 30px;
 }
 
+#title a {
+  text-decoration: none;
+  color:black;
+  display: block;
+}
+
 #projects {
   list-style: none;
   padding-inline-start: 0;
-  /* padding-right: 20px; */
 }
 
-#menu a {
+.menu {
+  padding-inline-start: 10px;
+  padding-right: 10px;
+}
+
+.menu a {
   text-decoration: none;
   color:black;
+  display: block;
 }
 
-#menu a:visited {
+.menu a:visited {
   color: black;
 }
 
-#projects .active {
+.menu .active {
   font-weight: bold;
 }
 
-#projects a:hover {
+.menu a:hover {
   background-color: lightpink;
 }
 
-#projects li {
+/* TODO: Figure out if this needs to be there */
+/* menu li {
   margin-bottom: 3px;
-}
+} */
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+} 

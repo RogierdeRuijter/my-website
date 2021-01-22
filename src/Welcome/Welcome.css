@@ -1,0 +1,57 @@
+#welcome-container {
+  width: 100%; 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+#scroll-down-element-line {
+  border-right: 1px solid black;
+  height: 60px;
+  width: 2px;
+  animation: 3.2s ease-in-out infinite fadebottom;
+  -webkit-animation: 3.2s ease-in-out infinite fadebottom;
+}
+
+#scroll-down-element-text {
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+#scroll-down-element {
+  position: absolute;
+  bottom: 0;
+  height: 120px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadebottom {
+  0%   {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  25%  {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  30%  {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  45%  {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

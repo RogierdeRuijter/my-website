@@ -3,7 +3,7 @@ import './Welcome.css';
 function Welcome() {
   return (
     <div id="welcome-container">
-      <div style={{fontSize: '20px'}}>
+      <div style={{fontSize: '5vw'}}>
         Welcome
       </div>
       <div id="scroll-down-element">

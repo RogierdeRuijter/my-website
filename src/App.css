@@ -35,28 +35,41 @@
   margin-bottom: 30px;
 }
 
+#title a {
+  text-decoration: none;
+  color:black;
+  display: block;
+}
+
 #projects {
   list-style: none;
   padding-inline-start: 0;
 }
 
-#menu a {
-  text-decoration: none;
-  color:black;
+.menu {
+  padding-inline-start: 10px;
+  padding-right: 10px;
 }
 
-#menu a:visited {
+.menu a {
+  text-decoration: none;
+  color:black;
+  display: block;
+}
+
+.menu a:visited {
   color: black;
 }
 
-.active {
+.menu .active {
   font-weight: bold;
 }
 
-#projects a:hover {
+.menu a:hover {
   background-color: lightpink;
 }
 
-#projects li {
+/* TODO: Figure out if this needs to be there */
+/* menu li {
   margin-bottom: 3px;
-}
+} */

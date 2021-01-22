@@ -35,21 +35,44 @@ const App = ({}) => {
       history.push('/welcome');
     }    
   }, [location]);
+
   const onUpdateMethod = (element) => {
-    if (element && element.id === sections[1]) {
-      setShow(true);
-    }
+    // if (element) {
+      // console.log('onUpdateMethod, element: ', element.id)
+      // switch(element.id) {
+        // case sections[0]:
+          // history.push(sections[0]);
+        // case sections[1]:
+        //   history.push(sections[1]);
+        // case sections[2]:
+        //   history.push(sections[2]);
+        // case sections[3]:
+        //   history.push(sections[3]);
+        // case sections[4]:
+        //   history.push(sections[4]);
+        // case sections[5]:
+        //   history.push(sections[5]);
+        // case sections[6]:
+        //   history.push(sections[6]);
+        
+      // }
+    // }
+    
+    // if (element && element.id === sections[1]) {
+      // setShow(true);
+    // }
   }
+
   return (
     <div id="content-container">
       <div id="menu">
         <div id="title">
-          <Link to="/fish-race">
+          <Link to={sections[0]}>
             Rogier de Ruijter
           </Link>
         </div>
         {/* TODO: add onUpdate method */}
-        <Scrollspy items={ sections } currentClassName="active" onUpdate={onUpdateMethod}>
+        <Scrollspy className="menu" items={sections} currentClassName="active" onUpdate={onUpdateMethod}>
           <Link to={sections[0]}>Fish race</Link>
           <Link to={sections[1]}>Circle game</Link>
           <Link to={sections[2]}>Montepoeli</Link>

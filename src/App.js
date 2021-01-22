@@ -64,34 +64,6 @@ const App = ({}) => {
           </li>
         </ul>
       </div>
-      {/* <div id="project-content"> */}
-        {/* <Switch>
-          <Route path="/welcome">
-            <Welcome />
-          </Route>
-          <Route path="/fish-race">
-            <FishRace />
-          </Route>
-          <Route path="/circle-game">
-            <CircleGame />
-          </Route>
-          <Route path="/montepoeli">
-            <Montepoeli />
-          </Route>
-          <Route path="/get-low">
-            <GetLow />
-          </Route>
-          <Route path="/sleeping-tumblr-seals">
-            <SleepingTumblrSeals />
-          </Route>
-          <Route path="/julia">
-            <Julia />
-          </Route>
-          <Route path="/info">
-            <Info />
-          </Route>
-        </Switch> */}
-    {/* </div> */}
     <div id="project-content">
       <Welcome />
       <FishRace />

@@ -59,7 +59,7 @@ const App = ({}) => {
     // }
     
     // if (element && element.id === sections[1]) {
-      // setShow(true);
+    //   setShow(true);
     // }
   }
 

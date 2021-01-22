@@ -34,7 +34,7 @@ const App = ({}) => {
     const element = welcomeTextRef.current;
     if (element) {
       if (!isScrolledIntoView(element)) {
-        document.getElementById('menu-container').classList.add('fade-in-animation');
+        document.getElementById('menu').classList.add('fade-in-animation');
         window.removeEventListener('scroll', scrollHandler);
       }
     }
@@ -83,23 +83,21 @@ const App = ({}) => {
             Rogier de Ruijter
           </Link>
         </div>
-        <div id="menu-container">
-          <Scrollspy className="menu" items={sections} currentClassName="active" onUpdate={onUpdateMethod}>
-            <Link to={sections[0]}>Fish race</Link>
-            <Link to={sections[1]}>Circle game</Link>
-            <Link to={sections[2]}>Montepoeli</Link>
-            <Link to={sections[3]}>Get low</Link>
-            <Link to={sections[4]}>
-                Sleeping Tumblr Seals
-            </Link>
-            <Link to={sections[5]}>
-                Julia
-            </Link>
-            <Link to={sections[6]}>
-                Info
-            </Link>
-          </Scrollspy>
-        </div>
+        <Scrollspy className="menu" items={sections} currentClassName="active" onUpdate={onUpdateMethod}>
+          <Link to={sections[0]}>Fish race</Link>
+          <Link to={sections[1]}>Circle game</Link>
+          <Link to={sections[2]}>Montepoeli</Link>
+          <Link to={sections[3]}>Get low</Link>
+          <Link to={sections[4]}>
+              Sleeping Tumblr Seals
+          </Link>
+          <Link to={sections[5]}>
+              Julia
+          </Link>
+          <Link to={sections[6]}>
+              Info
+          </Link>
+        </Scrollspy>
       </div>
     <div id="project-content">
       <Welcome welcomeTextRef={welcomeTextRef} />

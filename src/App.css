@@ -1,7 +1,7 @@
 #content-container {
   display: flex;
 }
-
+/* TODO: rename duplicate selector name */
 #menu {
   box-sizing: border-box;
   width: 200px;
@@ -11,9 +11,6 @@
   position: fixed;
   left: 0;
   top: 0;
-}
-
-#menu-container {
   opacity: 0;
 }
 
@@ -24,8 +21,8 @@
 
 #project-content {
   box-sizing: border-box;
-  margin-left: min(30%, 200px);
-  width: max(70%, calc(100% - 200px));
+  padding-left: min(30%, 200px);
+  width: max(100%, calc(100% - 200px));
   padding-right: min(20px, 3%);
   max-width: 1200px;
 }

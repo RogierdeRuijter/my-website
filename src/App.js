@@ -9,11 +9,24 @@ import Montepoeli from './projects/Montepoeli/Montepoeli';
 import Info from './Info/Info';
 import Julia from './projects/Julia/Julia';
 import Welcome from './Welcome/Welcome';
+import Scrollspy from 'react-scrollspy'
 
 const App = ({}) => {
   const location = useLocation();
   const history = useHistory();
+  // TODO: remove 
   const [pathname, setPathname] = useState('');
+  const [show, setShow] = useState(false);
+
+  const sections = [
+    "/fish-race",
+    "/circle-game",
+    "/montepoeli",
+    "/get-low",
+    "/sleeping-tumblr-seals",
+    "/julia",
+    "/info"
+  ];
   
   useEffect(() => {
     setPathname(location.pathname);
@@ -22,7 +35,14 @@ const App = ({}) => {
       history.push('/welcome');
     }
   }, [location]);
-
+  const onUpdateMethod = (element) => {
+    console.log('in onUpdateMethod');
+    console.log(element);
+    if (element && element.id === sections[1]) {
+      console.log(element.id);
+      setShow(true);
+    }
+  }
   return (
     <div id="content-container">
       <div id="menu">
@@ -31,48 +51,46 @@ const App = ({}) => {
             Rogier de Ruijter
           </Link>
         </div>
-        <ul id="projects">
-          <li>
-            <Link className={ pathname === '/fish-race' ? 'active' : '' } to="/fish-race">Fish race</Link>
-          </li>
-          <li>
-            <Link className={ pathname === '/circle-game' ? 'active' : '' } to="/circle-game">Circle game</Link>
-          </li>
-          <li>
-            <Link className={ pathname === '/montepoeli' ? 'active' : '' } to="/montepoeli">Montepoeli</Link>
-          </li>
-          <li>
-            <Link className={ pathname === '/get-low' ? 'active' : '' } to="/get-low">Get low</Link>
-          </li>
-          <li>
-            <Link className={ pathname === '/sleeping-tumblr-seals' ? 'active' : '' } 
-              to="/sleeping-tumblr-seals">
-                Sleeping Tumblr Seals
-            </Link>
-          </li>
-          <li>
-            <Link className={ pathname === '/julia' ? 'active' : '' } 
-              to="/julia">
-                Julia
-            </Link>
-          </li>
-          <li style={{marginTop: '25px', fontSize: '14px'}}>
-            <Link className={ pathname === '/info' ? 'active' : '' } 
-              to="/info">
-                Info
-            </Link>
-          </li>
-        </ul>
+        {/* TODO: add onUpdate method */}
+        <Scrollspy items={ sections } currentClassName="active" onUpdate={onUpdateMethod}>
+          <Link to={sections[0]}>Fish race</Link>
+          <Link to={sections[1]}>Circle game</Link>
+          <Link to={sections[2]}>Montepoeli</Link>
+          <Link to={sections[3]}>Get low</Link>
+          <Link to={sections[4]}>
+              Sleeping Tumblr Seals
+          </Link>
+          <Link to={sections[5]}>
+              Julia
+          </Link>
+          <Link to={sections[6]}>
+              Info
+          </Link>
+        </Scrollspy>
       </div>
     <div id="project-content">
       <Welcome />
-      <FishRace />
-      <CircleGame />
-      <Montepoeli />
-      <GetLow />
-      <SleepingTumblrSeals />
-      <Julia />
-      <Info />
+      <div id={sections[0]}>
+        <FishRace />
+      </div>
+      <div id={sections[1]}>
+        <CircleGame showWebsite={show}/>
+      </div>
+      <div id={sections[2]}>
+        <Montepoeli />
+      </div>
+      <div id={sections[3]}>
+        <GetLow />
+      </div>
+      <div id={sections[4]}>
+        <SleepingTumblrSeals />
+      </div>
+      <div id={sections[5]}>
+        <Julia />
+      </div>
+      <div id={sections[6]}>
+        <Info />
+      </div>
     </div>
   </div>
   );

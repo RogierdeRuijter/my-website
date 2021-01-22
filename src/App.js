@@ -8,6 +8,7 @@ import GetLow from './projects/GetLow/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
 import Info from './Info/Info';
 import Julia from './projects/Julia/Julia';
+import Welcome from './Welcome/Welcome';
 
 const App = ({}) => {
   const location = useLocation();
@@ -18,7 +19,7 @@ const App = ({}) => {
     setPathname(location.pathname);
 
     if (location.pathname === '/') {
-      history.push('/fish-race');
+      history.push('/welcome');
     }
   }, [location]);
 
@@ -65,6 +66,9 @@ const App = ({}) => {
       </div>
       <div id="project-content">
         <Switch>
+        <Route path="/welcome">
+            <Welcome />
+          </Route>
           <Route path="/fish-race">
             <FishRace />
           </Route>

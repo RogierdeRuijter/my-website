@@ -13,6 +13,15 @@
   top: 0;
 }
 
+#menu-container {
+  opacity: 0;
+}
+
+.fade-in-animation {
+  animation: 1s ease-in fadeIn forwards;
+  -webkit-animation: 1s ease-in fadeIn forwards;
+}
+
 #project-content {
   box-sizing: border-box;
   margin-left: min(30%, 200px);
@@ -73,3 +82,8 @@
 /* menu li {
   margin-bottom: 3px;
 } */
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+} 

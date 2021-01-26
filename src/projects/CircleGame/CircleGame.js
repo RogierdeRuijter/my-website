@@ -8,7 +8,7 @@ function CircleGame({showCircleGame}) {
   return (
     <SiteWithDescriptionContainer id="circle-game-container" loading={!showCircleGame}>
       <DelayedLoadingFade removeLoader={showCircleGame}>
-        <div className="iframe-size loader">
+        <div className="iframe-size">
           <Loader />
         </div>
       </DelayedLoadingFade>

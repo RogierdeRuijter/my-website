@@ -5,10 +5,6 @@
   grid-area: 1/1;
 }
 
-#sleeping-seals-container .loader {
-  z-index: -1;
-}
-
 #description {
   margin-top: min(50px, 5%);
   font-style: italic;

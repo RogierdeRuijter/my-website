@@ -8,7 +8,7 @@ function GetLow({showGetLow}) {
   return (
     <SiteWithDescriptionContainer id="get-low-container" loading={!showGetLow}>
       <DelayedLoadingFade removeLoader={showGetLow}>
-        <div className="iframe-size loader">
+        <div className="iframe-size">
           <Loader />
         </div>
       </DelayedLoadingFade> 

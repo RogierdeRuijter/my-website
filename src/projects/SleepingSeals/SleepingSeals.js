@@ -8,7 +8,7 @@ function SleepingTumblrSeals({showSleepingTumblrSeals}) {
   return (
     <SiteWithDescriptionContainer id="sleeping-seals-container">
       <DelayedLoadingFade removeLoader={showSleepingTumblrSeals}>
-        <div className="iframe-size loader">
+        <div className="iframe-size">
           <Loader color={'gray'}/>
         </div>
       </DelayedLoadingFade>

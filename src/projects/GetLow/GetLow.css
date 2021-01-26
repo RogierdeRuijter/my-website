@@ -1,7 +1,3 @@
-#get-low-container .loader {
-  z-index: -1;
-}
-
 #get-low-container .iframe-size {
   width: 100%; 
   height: 100%; 

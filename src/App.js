@@ -27,7 +27,7 @@ const App = ({}) => {
 
   const welcomeTextRef = createRef();
   
-  const sections = [
+  const sectionsList = [
     "/fish-race",
     "/circle-game",
     "/montepoeli",
@@ -37,6 +37,16 @@ const App = ({}) => {
     "/info"
   ];
   
+  const sections = {
+    fishRace: sectionsList[0],
+    circleGame: sectionsList[1],
+    montepoeli: sectionsList[2],
+    getLow: sectionsList[3],
+    sleepingTumblrSeals: sectionsList[4],
+    julia: sectionsList[5],
+    info: sectionsList[6]
+  };
+
   const scrollHandler = () => {
     const element = welcomeTextRef.current;
     if (element) {
@@ -73,20 +83,20 @@ const App = ({}) => {
 
   const onUpdateMethod = (element) => {
     if (element && element.id) {
-      if (element.id === sections[0]) {
+      if (element.id === sections.fishRace) {
         setShowFishRace(true);
       }
-      if (element.id === sections[1]) {
+      if (element.id === sections.circleGame) {
         setShowCirleGame(true);
       }
-      if (element.id === sections[3]) {
+      if (element.id === sections.getLow) {
         setShowGetLow(true);
       }
-      if (element.id === sections[4]) {
+      if (element.id === sections.sleepingTumblrSeals) {
         setShowSleepingTumblrSeals(true);
       }
-      // TODO: make clear why this is using sections 2
-      if (element.id === sections[2] || element.id ===  sections[5]) {
+      // If use scrolls past montepoeli early load julia, because it is a big section and the page jumps if julia lazy 
+      if (element.id === sections.montepoeli || element.id ===  sections.julia) {
         setShowJulia(true);
       }
     }
@@ -113,18 +123,18 @@ const App = ({}) => {
           </Link>
         </div>
         <div id="project-links">
-          <Scrollspy className="menu" items={sections} currentClassName="active" onUpdate={onUpdateMethod} offset={offset}>
-            <Link to={sections[0]}>Fish race</Link>
-            <Link to={sections[1]}>Circle game</Link>
-            <Link to={sections[2]}>Montepoeli</Link>
-            <Link to={sections[3]}>Get low</Link>
-            <Link to={sections[4]}>
+          <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={onUpdateMethod} offset={offset}>
+            <Link to={sections.fishRace}>Fish race</Link>
+            <Link to={sections.circleGame}>Circle game</Link>
+            <Link to={sections.montepoeli}>Montepoeli</Link>
+            <Link to={sections.getLow}>Get low</Link>
+            <Link to={sections.sleepingTumblrSeals}>
                 Sleeping Tumblr Seals
             </Link>
-            <Link to={sections[5]}>
+            <Link to={sections.julia}>
                 Julia
             </Link>
-            <Link to={sections[6]}>
+            <Link to={sections.info}>
                 Info
             </Link>
           </Scrollspy>
@@ -132,25 +142,25 @@ const App = ({}) => {
       </div>
     <div id="project-content">
       <Welcome welcomeTextRef={welcomeTextRef} />
-      <div className="empty-spacing" id={sections[0]}>
+      <div className="empty-spacing" id={sections.fishRace}>
         <FishRace showFishRace={showFishRace} />
       </div>
-      <div className="empty-spacing" id={sections[1]}>
+      <div className="empty-spacing" id={sections.circleGame}>
         <CircleGame showCircleGame={showCircleGame} />
       </div>
-      <div className="empty-spacing" id={sections[2]}>
+      <div className="empty-spacing" id={sections.montepoeli}>
         <Montepoeli />
       </div>
-      <div className="empty-spacing" id={sections[3]}>
+      <div className="empty-spacing" id={sections.getLow}>
         <GetLow showGetLow={showGetLow} />
       </div>
-      <div className="empty-spacing" id={sections[4]}>
+      <div className="empty-spacing" id={sections.sleepingTumblrSeals}>
         <SleepingTumblrSeals showSleepingTumblrSeals={showSleepingTumblrSeals} />
       </div>
-      <div className="empty-spacing" id={sections[5]}>
+      <div className="empty-spacing" id={sections.julia}>
         <Julia showJulia={showJulia} />
       </div>
-      <div className="empty-spacing" id={sections[6]}>
+      <div className="empty-spacing" id={sections.info}>
         <Info />
       </div>
     </div>

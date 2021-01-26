@@ -1,7 +1,7 @@
 import './Loader.css';
 
-const Loader = ({color}) => {
-  return (<div id="loader" style={{backgroundColor: color ? 'lightgray' : 'black'}}></div>);
+const Loader = () => {
+  return (<div id="loader"></div>);
 }
 
 export default Loader;

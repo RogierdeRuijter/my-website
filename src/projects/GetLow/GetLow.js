@@ -7,11 +7,11 @@ import Description from '../../Helpers/Description/Description';
 function GetLow({showGetLow}) {
   return (
     <SiteWithDescriptionContainer id="get-low-container" loading={!showGetLow}>
-      <DelayedLoadingFade removeLoader={showGetLow}>
-        <div className="iframe-size">
-          <Loader />
-        </div>
-      </DelayedLoadingFade> 
+      <div className="iframe-size">
+        <DelayedLoadingFade removeLoader={showGetLow}>
+            <Loader />
+        </DelayedLoadingFade> 
+      </div>
       { showGetLow && 
         <iframe 
           id="get-low-iframe"

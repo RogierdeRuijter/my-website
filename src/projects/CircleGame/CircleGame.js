@@ -7,11 +7,11 @@ import Description from '../../Helpers/Description/Description';
 function CircleGame({showCircleGame}) {
   return (
     <SiteWithDescriptionContainer id="circle-game-container" loading={!showCircleGame}>
-      <DelayedLoadingFade removeLoader={showCircleGame}>
-        <div className="iframe-size">
-          <Loader />
-        </div>
-      </DelayedLoadingFade>
+      <div className="iframe-size">
+        <DelayedLoadingFade removeLoader={showCircleGame}>
+            <Loader />
+        </DelayedLoadingFade>
+      </div>
       {showCircleGame && 
         <iframe id="circle-game-iframe" 
                 className="iframe-size" 

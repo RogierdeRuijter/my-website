@@ -7,11 +7,11 @@ import Description from '../../Helpers/Description/Description';
 function SleepingTumblrSeals({showSleepingTumblrSeals}) {
   return (
     <SiteWithDescriptionContainer id="sleeping-seals-container">
-      <DelayedLoadingFade removeLoader={showSleepingTumblrSeals}>
-        <div className="iframe-size">
-          <Loader color={'gray'}/>
-        </div>
-      </DelayedLoadingFade>
+      <div className="iframe-size">
+        <DelayedLoadingFade removeLoader={showSleepingTumblrSeals}>
+            <Loader color={'gray'}/>
+        </DelayedLoadingFade>
+      </div>
       { showSleepingTumblrSeals && 
         <iframe 
           id="sleeping-tumblr-seals-iframe"

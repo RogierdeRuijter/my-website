@@ -1,8 +1,3 @@
-#julia-container .loader {
-  position: absolute;
-  z-index: -1;
-}
-
 #julia-container .iframe-size {
   width: 100%; 
   /* TODO: find a dynamic way to get this size */

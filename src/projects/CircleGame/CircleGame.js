@@ -6,7 +6,7 @@ import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionConta
 function CircleGame({showCircleGame}) {
   return (
     <SiteWithDescriptionContainer id="circle-game-container" loading={!showCircleGame}>
-      <DelayedLoadingFade removeLoader={false}>
+      <DelayedLoadingFade removeLoader={showCircleGame}>
         <div className="iframe-size loader">
           <Loader />
         </div>

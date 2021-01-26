@@ -16,10 +16,17 @@ const App = ({}) => {
   const history = useHistory();
   // TODO: remove 
   const [pathname, setPathname] = useState('');
-  const [showProjects, setShowProjects] = useState(false);
+  
+  const [offset, setOffset] = useState(0);
+
+  const [showFishRace, setShowFishRace] = useState(false);
+  const [showCircleGame, setShowCirleGame] = useState(false);
+  const [showGetLow, setShowGetLow] = useState(false);
+  const [showSleepingTumblrSeals, setShowSleepingTumblrSeals] = useState(false);
+  const [showJulia, setShowJulia] = useState(false);
+
   const welcomeTextRef = createRef();
   
-  // TODO: make this an object for better readability
   const sections = [
     "/fish-race",
     "/circle-game",
@@ -34,15 +41,27 @@ const App = ({}) => {
     const element = welcomeTextRef.current;
     if (element) {
       if (!isScrolledIntoView(element)) {
-        document.getElementById('menu').classList.add('fade-in-animation');
+        document.getElementById('project-links').classList.add('fade-in-animation');
         window.removeEventListener('scroll', scrollHandler);
       }
     }
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler)  
+    if (welcomeTextRef && welcomeTextRef.current) {
+      window.addEventListener('scroll', scrollHandler);
+    }    
   })
+
+  useEffect(() => {
+    // TODO: do this calculation on window resize
+    const screenHeight = window.innerHeight;
+    const offsetFactor = 0.7;
+
+    if (screenHeight) {
+      setOffset(screenHeight * offsetFactor * -1);
+    }
+  },[])
 
   useEffect(() => {
     setPathname(location.pathname);
@@ -53,14 +72,24 @@ const App = ({}) => {
   }, [location]);
 
   const onUpdateMethod = (element) => {
-    console.log('in onUpdateMethod');
-    if (element && element.id && element.id === sections[0]) {
-      
+    if (element && element.id) {
+      if (element.id === sections[0]) {
+        setShowFishRace(true);
+      }
+      if (element.id === sections[1]) {
+        setShowCirleGame(true);
+      }
+      if (element.id === sections[3]) {
+        setShowGetLow(true);
+      }
+      if (element.id === sections[4]) {
+        setShowSleepingTumblrSeals(true);
+      }
+      // TODO: make clear why this is using sections 2
+      if (element.id === sections[2] || element.id ===  sections[5]) {
+        setShowJulia(true);
+      }
     }
-    
-    // if (element && element.id === sections[1]) {
-    //   setShow(true);
-    // }
   }
 
   function isScrolledIntoView(el) {
@@ -83,41 +112,43 @@ const App = ({}) => {
             Rogier de Ruijter
           </Link>
         </div>
-        <Scrollspy className="menu" items={sections} currentClassName="active" onUpdate={onUpdateMethod}>
-          <Link to={sections[0]}>Fish race</Link>
-          <Link to={sections[1]}>Circle game</Link>
-          <Link to={sections[2]}>Montepoeli</Link>
-          <Link to={sections[3]}>Get low</Link>
-          <Link to={sections[4]}>
-              Sleeping Tumblr Seals
-          </Link>
-          <Link to={sections[5]}>
-              Julia
-          </Link>
-          <Link to={sections[6]}>
-              Info
-          </Link>
-        </Scrollspy>
+        <div id="project-links">
+          <Scrollspy className="menu" items={sections} currentClassName="active" onUpdate={onUpdateMethod} offset={offset}>
+            <Link to={sections[0]}>Fish race</Link>
+            <Link to={sections[1]}>Circle game</Link>
+            <Link to={sections[2]}>Montepoeli</Link>
+            <Link to={sections[3]}>Get low</Link>
+            <Link to={sections[4]}>
+                Sleeping Tumblr Seals
+            </Link>
+            <Link to={sections[5]}>
+                Julia
+            </Link>
+            <Link to={sections[6]}>
+                Info
+            </Link>
+          </Scrollspy>
+        </div>
       </div>
     <div id="project-content">
       <Welcome welcomeTextRef={welcomeTextRef} />
       <div className="empty-spacing" id={sections[0]}>
-        <FishRace />
+        <FishRace showFishRace={showFishRace} />
       </div>
       <div className="empty-spacing" id={sections[1]}>
-        <CircleGame />
+        <CircleGame showCircleGame={showCircleGame} />
       </div>
       <div className="empty-spacing" id={sections[2]}>
         <Montepoeli />
       </div>
       <div className="empty-spacing" id={sections[3]}>
-        <GetLow />
+        <GetLow showGetLow={showGetLow} />
       </div>
       <div className="empty-spacing" id={sections[4]}>
-        <SleepingTumblrSeals />
+        <SleepingTumblrSeals showSleepingTumblrSeals={showSleepingTumblrSeals} />
       </div>
       <div className="empty-spacing" id={sections[5]}>
-        <Julia />
+        <Julia showJulia={showJulia} />
       </div>
       <div className="empty-spacing" id={sections[6]}>
         <Info />

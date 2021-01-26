@@ -1,16 +1,11 @@
-#get-low-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 100%; 
-  height: 100vh; 
-  padding-top: 20px;
-  padding-bottom: 20px; 
-  border-bottom: 1px solid black;
+#get-low-container .loader {
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  left: 0;
 }
 
-#get-low-container iframe {
+#get-low-container .iframe-size {
   width: 100%; 
   height: 80%; 
 }

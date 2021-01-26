@@ -1,15 +1,9 @@
-#julia-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 100%; 
-  padding-top: 20px;
-  padding-bottom: 20px; 
-  border-bottom: 1px solid black;
+#julia-container .loader {
+  position: absolute;
+  z-index: -1;
 }
 
-#julia-container iframe {
+#julia-container .iframe-size {
   width: 100%; 
   /* TODO: find a dynamic way to get this size */
   height: 700vh;

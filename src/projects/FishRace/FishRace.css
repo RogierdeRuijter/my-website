@@ -1,19 +1,4 @@
-#fish-race-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-
-  width: 100%; 
-  height: 100vh;
-
-  border-bottom: 1px solid black;
-  
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-#fish-race-container iframe {
+#fish-race-container .iframe-size {
   width: 100%;
   height: 45vw;
 }

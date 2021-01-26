@@ -1,13 +1,26 @@
 import './SleepingSeals.css';
+import Loader from '../../Loader/Loader';
+import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
+import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
 
-function SleepingTumblrSeals() {
+function SleepingTumblrSeals({showSleepingTumblrSeals}) {
   return (
-    <div id="sleeping-seals-container" >
-      <iframe src="https://sleepingsealswithcelebrityquotes.com" frameBorder="0"></iframe>
+    <SiteWithDescriptionContainer id="sleeping-seals-container">
+      <DelayedLoadingFade removeLoader={showSleepingTumblrSeals}>
+        <div className="iframe-size loader">
+          <Loader color={'gray'}/>
+        </div>
+      </DelayedLoadingFade>
+      { showSleepingTumblrSeals && 
+        <iframe 
+          id="sleeping-tumblr-seals-iframe"
+          className="iframe-size" 
+          src="https://sleepingsealswithcelebrityquotes.com" 
+          frameBorder="0"></iframe>}
       <div id="description">
         These are memes for sleeping seals. Thanks Jonna for creating this with me and eating way too much candy for one night.
       </div>
-    </div>
+    </SiteWithDescriptionContainer>
   );
 }
 

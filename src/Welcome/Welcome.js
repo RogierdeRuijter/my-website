@@ -1,6 +1,11 @@
 import './Welcome.css';
+import { useEffect } from 'react';
 
 function Welcome({welcomeTextRef}) {
+  useEffect(() => {
+    console.log('welcomeUseEffect')
+    console.log(welcomeTextRef);
+  })
   return (
     <div id="welcome-container">
       <div ref={welcomeTextRef} style={{fontSize: '5vw'}}>

@@ -1,26 +1,26 @@
 import './Julia.css';
-import { useEffect, useState } from 'react';
+import Loader from '../../Loader/Loader';
+import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
+import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
 
-const Julia = () => {
-  const [ trueHeightIframe, setTrueHeightIframe ] = useState(null);
-  
-  useEffect(() => {
-      setTimeout(() => {
-        const juliaIframe = document.getElementById('julia-iframe');
-        // juliaIframe.style.height = 'auto';
-        // console.log("juliaIframe.contentWindow.document: ", juliaIframe.contentWindow);
-        setTrueHeightIframe(juliaIframe.offsetHeight);
-      }, 2000)
-      
-  }, []);
+const Julia = ({showJulia}) => {
   return (
-    <div id="julia-container">
-      <iframe
-        id="julia-iframe"
-        src="https://rogierderuijter.github.io/julia/" 
-        frameBorder="0">
-      </iframe>
-    </div>
+    <>
+    <SiteWithDescriptionContainer id="julia-container" noFixedHeight={true}>
+        {/* <DelayedLoadingFade removeLoader={showJulia}>
+          <div className="iframe-size loader" >
+            <Loader />
+          </div>
+        </DelayedLoadingFade> */}
+        {showJulia && 
+          <iframe
+            id="julia-iframe"
+            className="iframe-size"
+            src="https://rogierderuijter.github.io/julia/" 
+            frameBorder="0">
+          </iframe> }
+      </SiteWithDescriptionContainer>
+    </>
   );
 }
 

@@ -1,12 +1,12 @@
 import './CircleGame.css';
 import Loader from '../../Loader/Loader';
 import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
-import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
+import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
 import Description from '../../Helpers/Description/Description';
 
 function CircleGame({showCircleGame}) {
   return (
-    <SiteWithDescriptionContainer id="circle-game-container" loading={!showCircleGame}>
+    <ContentContainer id="circle-game-container" loading={!showCircleGame}>
       <div className="iframe-size">
         <DelayedLoadingFade removeLoader={showCircleGame}>
             <Loader />
@@ -22,7 +22,7 @@ function CircleGame({showCircleGame}) {
       <Description>
         The iterations have been endless. Thanks for the helping hand Lotte.
       </Description>
-    </SiteWithDescriptionContainer>
+    </ContentContainer>
   );
 }
 

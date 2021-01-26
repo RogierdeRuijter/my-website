@@ -1,12 +1,12 @@
 import './SleepingSeals.css';
 import Loader from '../../Loader/Loader';
 import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
-import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
+import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
 import Description from '../../Helpers/Description/Description';
 
 function SleepingTumblrSeals({showSleepingTumblrSeals}) {
   return (
-    <SiteWithDescriptionContainer id="sleeping-seals-container">
+    <ContentContainer id="sleeping-seals-container">
       <div className="iframe-size">
         <DelayedLoadingFade removeLoader={showSleepingTumblrSeals}>
             <Loader color={'gray'}/>
@@ -21,7 +21,7 @@ function SleepingTumblrSeals({showSleepingTumblrSeals}) {
       <Description>
         These are memes for sleeping seals. Thanks Jonna for creating this with me and eating way too much candy for one night.
       </Description>
-    </SiteWithDescriptionContainer>
+    </ContentContainer>
   );
 }
 

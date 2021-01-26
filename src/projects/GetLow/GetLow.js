@@ -1,12 +1,12 @@
 import './GetLow.css';
 import Loader from '../../Loader/Loader';
 import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
-import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
+import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
 import Description from '../../Helpers/Description/Description';
 
 function GetLow({showGetLow}) {
   return (
-    <SiteWithDescriptionContainer id="get-low-container" loading={!showGetLow}>
+    <ContentContainer id="get-low-container" loading={!showGetLow}>
       <div className="iframe-size">
         <DelayedLoadingFade removeLoader={showGetLow}>
             <Loader />
@@ -23,7 +23,7 @@ function GetLow({showGetLow}) {
       <Description>
         Dedication to the performance that makes me believe I can do anything. © Kanye West - All day [Brit Awards]
       </Description>
-    </SiteWithDescriptionContainer>
+    </ContentContainer>
   );
 }
 

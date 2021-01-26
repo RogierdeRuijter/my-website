@@ -1,10 +1,10 @@
 import './Julia.css';
-import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
+import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
 
 const Julia = ({showJulia}) => {
   return (
     <>
-    <SiteWithDescriptionContainer id="julia-container" noFixedHeight={true}>
+    <ContentContainer id="julia-container" noFixedHeight={true}>
         {showJulia && 
           <iframe
             id="julia-iframe"
@@ -12,7 +12,7 @@ const Julia = ({showJulia}) => {
             src="https://rogierderuijter.github.io/julia/" 
             frameBorder="0">
           </iframe> }
-      </SiteWithDescriptionContainer>
+      </ContentContainer>
     </>
   );
 }

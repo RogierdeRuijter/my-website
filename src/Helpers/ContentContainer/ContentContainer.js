@@ -1,6 +1,6 @@
 import './SiteWithDescriptionContainer.css';
 
-function SiteWithDescriptionContainer(props) {
+function ContentContainer(props) {
   return (
     <div 
       id={props.id} 
@@ -12,4 +12,4 @@ function SiteWithDescriptionContainer(props) {
   );
 }
 
-export default SiteWithDescriptionContainer;
+export default ContentContainer;

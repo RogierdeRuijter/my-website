@@ -2,6 +2,7 @@ import './SleepingSeals.css';
 import Loader from '../../Loader/Loader';
 import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
 import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
+import Description from '../../Helpers/Description/Description';
 
 function SleepingTumblrSeals({showSleepingTumblrSeals}) {
   return (
@@ -17,9 +18,9 @@ function SleepingTumblrSeals({showSleepingTumblrSeals}) {
           className="iframe-size" 
           src="https://sleepingsealswithcelebrityquotes.com" 
           frameBorder="0"></iframe>}
-      <div id="description">
+      <Description>
         These are memes for sleeping seals. Thanks Jonna for creating this with me and eating way too much candy for one night.
-      </div>
+      </Description>
     </SiteWithDescriptionContainer>
   );
 }

@@ -2,6 +2,7 @@ import './FishRace.css';
 import Loader from '../../Loader/Loader';
 import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
 import SiteWithDescriptionContainer from '../../Helpers/SiteWithDescriptionContainer/SiteWithDescriptionContainer';
+import Description from '../../Helpers/Description/Description';
 
 function FishRace({showFishRace}) {
   return (
@@ -13,11 +14,11 @@ function FishRace({showFishRace}) {
           src="https://itisafishrace.xyz" 
           loading="lazy" 
           frameBorder="0"></iframe> }
-      <div id="description">
+      <Description>
         Created during a night filled with drinks by Daniel and me. 
         Later refined by the people mentioned before and Joost. <br/>
         Thank you guys for having many discussions on the soul of the fish race. 
-      </div>
+      </Description>
     </SiteWithDescriptionContainer>
   );
 }

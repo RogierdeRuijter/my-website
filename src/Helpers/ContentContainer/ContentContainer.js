@@ -4,7 +4,7 @@ function ContentContainer(props) {
   return (
     <div 
       id={props.id} 
-      className="site-with-description-container" 
+      className="content-container" 
       style={{ height: props.noFixedHeight ? '' : '100vh' }}
         >
       { props.children }

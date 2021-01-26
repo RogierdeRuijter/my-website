@@ -1,4 +1,4 @@
-import './SiteWithDescriptionContainer.css';
+import './ContentContainer.css';
 
 function ContentContainer(props) {
   return (

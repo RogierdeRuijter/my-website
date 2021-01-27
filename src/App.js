@@ -49,11 +49,15 @@ const App = ({}) => {
     info: sectionsList[7]
   };
 
+  const addFadeInAnimationForProjectLinks = () => {
+    document.getElementById('project-links').classList.add('fade-in-animation');
+  } 
+
   const scrollHandler = () => {
     const element = welcomeTextRef.current;
     if (element) {
       if (!isScrolledIntoView(element)) {
-        document.getElementById('project-links').classList.add('fade-in-animation');
+        addFadeInAnimationForProjectLinks();
         window.removeEventListener('scroll', scrollHandler);
       }
     }
@@ -80,7 +84,9 @@ const App = ({}) => {
 
     if (location.pathname === '/') {
       history.push('/welcome');
-    }    
+    } else {
+      addFadeInAnimationForProjectLinks();
+    }
   }, [location]);
 
   const onUpdateMethod = (element) => {

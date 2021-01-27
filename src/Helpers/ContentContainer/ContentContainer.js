@@ -5,7 +5,10 @@ function ContentContainer(props) {
     <div 
       id={props.id} 
       className="content-container" 
-      style={{ height: props.noFixedHeight ? '' : '100vh' }}
+      style={{ 
+        height: props.noFixedHeight ? '' : '100vh', 
+        maxHeight: props.noFixedHeight ? '100%' : ''
+      }}
         >
       { props.children }
     </div>

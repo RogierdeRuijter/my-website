@@ -28,6 +28,7 @@ const App = ({}) => {
   const welcomeTextRef = createRef();
   
   const sectionsList = [
+    "/welcome",
     "/fish-race",
     "/circle-game",
     "/montepoeli",
@@ -38,13 +39,14 @@ const App = ({}) => {
   ];
   
   const sections = {
-    fishRace: sectionsList[0],
-    circleGame: sectionsList[1],
-    montepoeli: sectionsList[2],
-    getLow: sectionsList[3],
-    sleepingTumblrSeals: sectionsList[4],
-    julia: sectionsList[5],
-    info: sectionsList[6]
+    welcome: sectionsList[0],
+    fishRace: sectionsList[1],
+    circleGame: sectionsList[2],
+    montepoeli: sectionsList[3],
+    getLow: sectionsList[4],
+    sleepingTumblrSeals: sectionsList[5],
+    julia: sectionsList[6],
+    info: sectionsList[7]
   };
 
   const scrollHandler = () => {
@@ -109,21 +111,19 @@ const App = ({}) => {
 
     // Only completely visible elements return true:
     var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-    // Partially visible elements return true:
-    //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
     return isVisible;
 }
 
   return (
     <div id="content-container">
       <div id="menu">
-        <div id="title">
-          <Link to={sections[0]}>
-            Rogier de Ruijter
-          </Link>
-        </div>
+        {/* <div id="title">
+        </div> */}
         <div id="project-links">
-          <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={onUpdateMethod} offset={offset}>
+          <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={onUpdateMethod} offset={offset}> 
+            <Link to={sections.welcome} id="title">
+                Rogier de Ruijter
+            </Link>
             <Link to={sections.fishRace}>Fish race</Link>
             <Link to={sections.circleGame}>Circle game</Link>
             <Link to={sections.montepoeli}>Montepoeli</Link>
@@ -141,7 +141,9 @@ const App = ({}) => {
         </div>
       </div>
     <div id="project-content">
-      <Welcome welcomeTextRef={welcomeTextRef} />
+      <div id={sections.welcome}>
+        <Welcome welcomeTextRef={welcomeTextRef} />
+      </div>
       <div className="empty-spacing" id={sections.fishRace}>
         <FishRace showFishRace={showFishRace} />
       </div>

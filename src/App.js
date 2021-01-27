@@ -82,8 +82,8 @@ const App = ({}) => {
   useEffect(() => {
     setPathname(location.pathname);
 
-    if (location.pathname === '/') {
-      history.push('/welcome');
+    if (location.pathname === '/' || location.pathname === sections.welcome) {
+      history.push(sections.welcome);
     } else {
       addFadeInAnimationForProjectLinks();
     }

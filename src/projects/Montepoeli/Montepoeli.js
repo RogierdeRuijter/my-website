@@ -9,12 +9,11 @@ import Description from '../../Helpers/Description/Description';
 function Montepoeli() {
   return (
     <ContentContainer id="montepoeli-content-container">
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <div id="montepoeli-content">
         <img className="iphone rounded-corners spacer" src={montepoeliHome}></img>
         <img className="iphone rounded-corners spacer" src={montepoeliAddGame}></img>
         <img className="iphone rounded-corners" src={montepoeliAddGameFilled}></img>
       </div>
-
       <Description>
         A website build for the chess club. 
         The chess club was founded in Montepulciano, Italy. 

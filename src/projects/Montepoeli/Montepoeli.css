@@ -13,3 +13,7 @@
 #montepoeli-content-container img {
   max-width: 100%;
 }
+
+#montepoeli-content {
+  grid-area: 1/1;
+}

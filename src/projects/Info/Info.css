@@ -8,10 +8,11 @@
 
 .info-content {
     background-color: pink;
-    width: 500px;
+    width: 600px;
     max-width: 100%;
     padding: 20px;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 .special-thanks li {

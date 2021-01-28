@@ -124,8 +124,6 @@ const App = () => {
   return (
     <div id="content-container">
       <div id="menu">
-        {/* <div id="title">
-        </div> */}
         <div id="project-links">
           <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={onUpdateMethod} offset={offset}> 
             <Link to={sections.welcome} id="title">

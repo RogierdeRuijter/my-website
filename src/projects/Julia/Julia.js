@@ -8,6 +8,7 @@ const Julia = ({showJulia}) => {
         {showJulia && 
           <iframe
             id="julia-iframe"
+            title="julia"
             className="iframe-size"
             src="https://rogierderuijter.github.io/julia/" 
             frameBorder="0">

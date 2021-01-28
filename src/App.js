@@ -11,6 +11,28 @@ import Julia from './projects/Julia/Julia';
 import Welcome from './Welcome/Welcome';
 import Scrollspy from 'react-scrollspy'
 
+const sectionsList = [
+  "/welcome",
+  "/fish-race",
+  "/circle-game",
+  "/montepoeli",
+  "/get-low",
+  "/sleeping-tumblr-seals",
+  "/julia",
+  "/info"
+];
+
+const sections = {
+  welcome: sectionsList[0],
+  fishRace: sectionsList[1],
+  circleGame: sectionsList[2],
+  montepoeli: sectionsList[3],
+  getLow: sectionsList[4],
+  sleepingTumblrSeals: sectionsList[5],
+  julia: sectionsList[6],
+  info: sectionsList[7]
+};
+
 const App = () => {
   const location = useLocation();
   const history = useHistory();
@@ -21,30 +43,8 @@ const App = () => {
   const [showGetLow, setShowGetLow] = useState(false);
   const [showSleepingTumblrSeals, setShowSleepingTumblrSeals] = useState(false);
   const [showJulia, setShowJulia] = useState(false);
-
+  
   const welcomeTextRef = createRef();
-  
-  const sectionsList = [
-    "/welcome",
-    "/fish-race",
-    "/circle-game",
-    "/montepoeli",
-    "/get-low",
-    "/sleeping-tumblr-seals",
-    "/julia",
-    "/info"
-  ];
-  
-  const sections = {
-    welcome: sectionsList[0],
-    fishRace: sectionsList[1],
-    circleGame: sectionsList[2],
-    montepoeli: sectionsList[3],
-    getLow: sectionsList[4],
-    sleepingTumblrSeals: sectionsList[5],
-    julia: sectionsList[6],
-    info: sectionsList[7]
-  };
 
   const addFadeInAnimationForProjectLinks = () => {
     document.getElementById('project-links').classList.add('fade-in-animation');
@@ -82,9 +82,10 @@ const App = () => {
     } else {
       addFadeInAnimationForProjectLinks();
     }
-  }, [location]);
+  }, [location, history]);
 
-  const juliaIndex = useMemo(() => sectionsList.findIndex((section) => section === sections.julia), [sectionsList]);
+  const juliaIndex = useMemo(() => sectionsList.findIndex((section) => section === sections.julia),
+  []);
 
   const activeElementIsPassedJulia = (currentSection) => {
     return sectionsList.findIndex((section) => section === currentSection) >= juliaIndex;

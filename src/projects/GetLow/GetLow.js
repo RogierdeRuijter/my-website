@@ -15,6 +15,7 @@ function GetLow({showGetLow}) {
       { showGetLow && 
         <iframe 
           id="get-low-iframe"
+          title="get-low"
           className="iframe-size" 
           src="https://rogierderuijter.github.io/get-low/" 
           loading="lazy" 

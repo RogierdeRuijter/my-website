@@ -10,9 +10,9 @@ function Montepoeli() {
   return (
     <ContentWithDescriptionContainer id="montepoeli-content-container" noFixedHeightContent={true}>
       <div id="montepoeli-content">
-        <img className="iphone rounded-corners spacer" src={montepoeliHome}></img>
-        <img className="iphone rounded-corners spacer" src={montepoeliAddGame}></img>
-        <img className="iphone rounded-corners" src={montepoeliAddGameFilled}></img>
+        <img className="iphone rounded-corners spacer" src={montepoeliHome} alt="Home screen"></img>
+        <img className="iphone rounded-corners spacer" src={montepoeliAddGame} alt="Add game"></img>
+        <img className="iphone rounded-corners" src={montepoeliAddGameFilled} alt="Filled in game"></img>
       </div>
       <Description>
         A website build for the chess club. 

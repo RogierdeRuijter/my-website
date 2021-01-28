@@ -14,6 +14,7 @@ function CircleGame({showCircleGame}) {
       </div>
       {showCircleGame && 
         <iframe id="circle-game-iframe" 
+                title="circle-game"
                 className="iframe-size" 
                 src="https://circle-ga.me" 
                 loading="lazy" 

@@ -8,6 +8,7 @@ function SleepingTumblrSeals({showSleepingTumblrSeals}) {
       { showSleepingTumblrSeals && 
         <iframe 
           id="sleeping-tumblr-seals-iframe"
+          title="sleeping-tumblr-seals"
           className="iframe-size" 
           src="https://sleepingsealswithcelebrityquotes.com" 
           frameBorder="0"></iframe>}

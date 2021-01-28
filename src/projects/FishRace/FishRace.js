@@ -7,7 +7,8 @@ function FishRace({showFishRace}) {
     <ContentWithDescriptionContainer id="fish-race-container">
       { showFishRace && 
         <iframe 
-          id="fish-race-iframe" 
+          id="fish-race-iframe"
+          title="fish-race"
           className="iframe-size" 
           src="https://itisafishrace.xyz" 
           loading="lazy" 

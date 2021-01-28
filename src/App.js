@@ -3,7 +3,7 @@ import { useLocation, useHistory, Link } from 'react-router-dom';
 import CircleGame from './projects/CircleGame/CircleGame';
 import FishRace from './projects/FishRace/FishRace';
 import SleepingTumblrSeals from './projects/SleepingSeals/SleepingSeals';
-import { useEffect, useState, createRef } from 'react';
+import { useEffect, useState, createRef, useCallback } from 'react';
 import GetLow from './projects/GetLow/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
 import Info from './projects/Info/Info';
@@ -77,14 +77,7 @@ const App = () => {
     }
   },[]);
 
-
-  useEffect(() => {
-    if (welcomeTextRef && welcomeTextRef.current) {
-      window.addEventListener('scroll', scrollHandler);
-    }    
-  }, [welcomeTextRef]);
-
-  const scrollHandler = () => {
+  const scrollHandler = useCallback(() => {
     const element = welcomeTextRef.current;
     if (element) {
       if (!isScrolledIntoView(element)) {
@@ -92,7 +85,13 @@ const App = () => {
         window.removeEventListener('scroll', scrollHandler);
       }
     }
-  };
+  }, [welcomeTextRef]);
+
+  useEffect(() => {
+    if (welcomeTextRef && welcomeTextRef.current) {
+      window.addEventListener('scroll', scrollHandler);
+    }    
+  }, [welcomeTextRef, scrollHandler]);
 
   useEffect(() => {
     if (location.pathname === '/' || location.pathname === sections.welcome) {

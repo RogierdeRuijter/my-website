@@ -3,7 +3,7 @@ import { useLocation, useHistory, Link } from 'react-router-dom';
 import CircleGame from './projects/CircleGame/CircleGame';
 import FishRace from './projects/FishRace/FishRace';
 import SleepingTumblrSeals from './projects/SleepingSeals/SleepingSeals';
-import { useEffect, useState, createRef, useMemo } from 'react';
+import { useEffect, useState, createRef } from 'react';
 import GetLow from './projects/GetLow/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
 import Info from './projects/Info/Info';
@@ -33,6 +33,26 @@ const sections = {
   info: sectionsList[7]
 };
 
+const juliaIndex = () => sectionsList.findIndex((section) => section === sections.julia);
+
+const activeElementIsPassedJulia = (currentSection) => {
+  return sectionsList.findIndex((section) => section === currentSection) >= juliaIndex;
+}
+
+const addFadeInAnimationForProjectLinks = () => {
+  document.getElementById('project-links').classList.add('fade-in-animation');
+};
+
+const isScrolledIntoView = (el) => {
+  var rect = el.getBoundingClientRect();
+  var elemTop = rect.top;
+  var elemBottom = rect.bottom;
+
+  // Only completely visible elements return true:
+  var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+  return isVisible;
+}
+
 const App = () => {
   const location = useLocation();
   const history = useHistory();
@@ -43,28 +63,9 @@ const App = () => {
   const [showGetLow, setShowGetLow] = useState(false);
   const [showSleepingTumblrSeals, setShowSleepingTumblrSeals] = useState(false);
   const [showJulia, setShowJulia] = useState(false);
+  const [currentElement, setCurrentElement] = useState('');
   
   const welcomeTextRef = createRef();
-
-  const addFadeInAnimationForProjectLinks = () => {
-    document.getElementById('project-links').classList.add('fade-in-animation');
-  } 
-
-  const scrollHandler = () => {
-    const element = welcomeTextRef.current;
-    if (element) {
-      if (!isScrolledIntoView(element)) {
-        addFadeInAnimationForProjectLinks();
-        window.removeEventListener('scroll', scrollHandler);
-      }
-    }
-  }
-
-  useEffect(() => {
-    if (welcomeTextRef && welcomeTextRef.current) {
-      window.addEventListener('scroll', scrollHandler);
-    }    
-  })
 
   useEffect(() => {
     // TODO: do this calculation on window resize
@@ -74,7 +75,24 @@ const App = () => {
     if (screenHeight) {
       setOffset(screenHeight * offsetFactor * -1);
     }
-  },[])
+  },[]);
+
+
+  useEffect(() => {
+    if (welcomeTextRef && welcomeTextRef.current) {
+      window.addEventListener('scroll', scrollHandler);
+    }    
+  }, [welcomeTextRef]);
+
+  const scrollHandler = () => {
+    const element = welcomeTextRef.current;
+    if (element) {
+      if (!isScrolledIntoView(element)) {
+        addFadeInAnimationForProjectLinks();
+        window.removeEventListener('scroll', scrollHandler);
+      }
+    }
+  };
 
   useEffect(() => {
     if (location.pathname === '/' || location.pathname === sections.welcome) {
@@ -84,49 +102,32 @@ const App = () => {
     }
   }, [location, history]);
 
-  const juliaIndex = useMemo(() => sectionsList.findIndex((section) => section === sections.julia),
-  []);
-
-  const activeElementIsPassedJulia = (currentSection) => {
-    return sectionsList.findIndex((section) => section === currentSection) >= juliaIndex;
-  }
-
-  const onUpdateMethod = (element) => {
-    if (element && element.id) {
-      if (element.id === sections.fishRace) {
+  useEffect(() => {
+    if (currentElement && currentElement.id) {
+      if (currentElement.id === sections.fishRace) {
         setShowFishRace(true);
       }
-      if (element.id === sections.circleGame) {
+      if (currentElement.id === sections.circleGame) {
         setShowCirleGame(true);
       }
-      if (element.id === sections.getLow) {
+      if (currentElement.id === sections.getLow) {
         setShowGetLow(true);
       }
-      if (element.id === sections.sleepingTumblrSeals) {
+      if (currentElement.id === sections.sleepingTumblrSeals) {
         setShowSleepingTumblrSeals(true);
       }
       // If the user scrolls past montepoeli early load julia, because it is a big section and the page jumps if julia lazy 
-      if (element.id === sections.montepoeli || activeElementIsPassedJulia(element.id)) {
+      if (currentElement.id === sections.montepoeli || activeElementIsPassedJulia(currentElement.id)) {
         setShowJulia(true);
       }
     }
-  }
-
-  function isScrolledIntoView(el) {
-    var rect = el.getBoundingClientRect();
-    var elemTop = rect.top;
-    var elemBottom = rect.bottom;
-
-    // Only completely visible elements return true:
-    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-    return isVisible;
-}
+  }, [currentElement]);
 
   return (
     <div id="content-container">
       <div id="menu">
         <div id="project-links">
-          <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={onUpdateMethod} offset={offset}> 
+          <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={setCurrentElement} offset={offset}> 
             <Link to={sections.welcome} id="title">
                 Rogier de Ruijter
             </Link>

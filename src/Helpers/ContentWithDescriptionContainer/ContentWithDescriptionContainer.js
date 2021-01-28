@@ -4,7 +4,7 @@ function ContentWithDescriptionContainer(props) {
   return (
     <div
       id={props.id} 
-      className="content-container"
+      className="content-container-with-description"
       style={{
         height: props.noFixedHeightContent ? '' : '100vh',
         gridTemplateRows: props.noFixedHeightContent ? 'auto 20%' : '80% 20%'

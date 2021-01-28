@@ -1,8 +1,8 @@
 import './CircleGame.css';
-import Loader from '../../Helpers/Loader/Loader';
-import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
-import Description from '../../Helpers/Description/Description';
-import ContentWithDescriptionContainer from '../../Helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
+import Loader from '../../helpers/Loader/Loader';
+import DelayedLoadingFade from '../../helpers/DelayedLoadingFade/DelayedLoadingFade';
+import Description from '../../helpers/Description/Description';
+import ContentWithDescriptionContainer from '../../helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
 
 function CircleGame({showCircleGame}) {
   return (

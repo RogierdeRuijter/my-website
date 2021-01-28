@@ -3,20 +3,17 @@ import { useLocation, useHistory, Link } from 'react-router-dom';
 import CircleGame from './projects/CircleGame/CircleGame';
 import FishRace from './projects/FishRace/FishRace';
 import SleepingTumblrSeals from './projects/SleepingSeals/SleepingSeals';
-import { useEffect, useState, createRef } from 'react';
+import { useEffect, useState, createRef, useMemo } from 'react';
 import GetLow from './projects/GetLow/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
-import Info from './Info/Info';
+import Info from './projects/Info/Info';
 import Julia from './projects/Julia/Julia';
 import Welcome from './Welcome/Welcome';
 import Scrollspy from 'react-scrollspy'
 
-const App = ({}) => {
+const App = () => {
   const location = useLocation();
   const history = useHistory();
-  // TODO: remove 
-  const [pathname, setPathname] = useState('');
-  
   const [offset, setOffset] = useState(0);
 
   const [showFishRace, setShowFishRace] = useState(false);
@@ -80,14 +77,20 @@ const App = ({}) => {
   },[])
 
   useEffect(() => {
-    setPathname(location.pathname);
-
     if (location.pathname === '/' || location.pathname === sections.welcome) {
       history.push(sections.welcome);
     } else {
       addFadeInAnimationForProjectLinks();
     }
   }, [location]);
+
+  const juliaIndex = useMemo(() => sectionsList.findIndex((section) => section === sections.julia), [sectionsList]);
+
+  const activeElementIsPassedJulia = (currentSection) => {
+    console.log('juliaIndex');
+    console.log(juliaIndex);
+    return sectionsList.findIndex((section) => section === currentSection) >= juliaIndex;
+  }
 
   const onUpdateMethod = (element) => {
     if (element && element.id) {
@@ -103,8 +106,8 @@ const App = ({}) => {
       if (element.id === sections.sleepingTumblrSeals) {
         setShowSleepingTumblrSeals(true);
       }
-      // If use scrolls past montepoeli early load julia, because it is a big section and the page jumps if julia lazy 
-      if (element.id === sections.montepoeli || element.id ===  sections.julia) {
+      // If the user scrolls past montepoeli early load julia, because it is a big section and the page jumps if julia lazy 
+      if (element.id === sections.montepoeli || activeElementIsPassedJulia(element.id)) {
         setShowJulia(true);
       }
     }

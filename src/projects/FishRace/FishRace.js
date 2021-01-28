@@ -1,6 +1,6 @@
 import './FishRace.css';
-import Description from '../../Helpers/Description/Description';
-import ContentWithDescriptionContainer from '../../Helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
+import Description from '../../helpers/Description/Description';
+import ContentWithDescriptionContainer from '../../helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
 
 function FishRace({showFishRace}) {
   return (

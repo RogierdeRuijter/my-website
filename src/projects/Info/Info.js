@@ -1,10 +1,9 @@
 import './Info.css';
-import ContentContainer from '../Helpers/ContentContainer/ContentContainer';
+import ContentContainer from '../../helpers/ContentContainer/ContentContainer';
 
 function Info() {
   return (
-    <ContentContainer withFullScreenHeight={true}>
-      
+    <ContentContainer withFullScreenHeight={true} noBottomBorder={true}>
       <div className="info-container">
         <div>
           <div className="info-content">

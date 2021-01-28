@@ -3,8 +3,8 @@ import montepoeliHome from '../../assets/montepoeli_home.png';
 import montepoeliAddGame from '../../assets/montepoeli_add_game.png';
 import montepoeliAddGameFilled from '../../assets/montepoeli_add_game_filled.png';
 import './Montepoeli.css';
-import Description from '../../Helpers/Description/Description';
-import ContentWithDescriptionContainer from '../../Helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
+import Description from '../../helpers/Description/Description';
+import ContentWithDescriptionContainer from '../../helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
 
 function Montepoeli() {
   return (

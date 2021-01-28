@@ -1,5 +1,5 @@
 import './Julia.css';
-import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
+import ContentContainer from '../../helpers/ContentContainer/ContentContainer';
 
 const Julia = ({showJulia}) => {
   return (

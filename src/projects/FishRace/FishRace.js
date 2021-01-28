@@ -1,10 +1,10 @@
 import './FishRace.css';
-import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
 import Description from '../../Helpers/Description/Description';
+import ContentWithDescriptionContainer from '../../Helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
 
 function FishRace({showFishRace}) {
   return (
-    <ContentContainer id="fish-race-container">
+    <ContentWithDescriptionContainer id="fish-race-container">
       { showFishRace && 
         <iframe 
           id="fish-race-iframe" 
@@ -17,7 +17,7 @@ function FishRace({showFishRace}) {
         Later refined by the people mentioned before and Joost. <br/>
         Thank you guys for having many discussions on the soul of the fish race. 
       </Description>
-    </ContentContainer>
+    </ContentWithDescriptionContainer>
   );
 }
 

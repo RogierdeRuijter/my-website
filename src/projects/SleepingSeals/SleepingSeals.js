@@ -1,10 +1,10 @@
 import './SleepingSeals.css';
-import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
 import Description from '../../Helpers/Description/Description';
+import ContentWithDescriptionContainer from '../../Helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
 
 function SleepingTumblrSeals({showSleepingTumblrSeals}) {
   return (
-    <ContentContainer id="sleeping-seals-container">
+    <ContentWithDescriptionContainer id="sleeping-seals-container">
       { showSleepingTumblrSeals && 
         <iframe 
           id="sleeping-tumblr-seals-iframe"
@@ -14,7 +14,7 @@ function SleepingTumblrSeals({showSleepingTumblrSeals}) {
       <Description>
         These are memes for sleeping seals. Thanks Jonna for creating this with me and eating way too much candy for one night.
       </Description>
-    </ContentContainer>
+    </ContentWithDescriptionContainer>
   );
 }
 

@@ -4,7 +4,7 @@ import ContentContainer from '../../Helpers/ContentContainer/ContentContainer';
 const Julia = ({showJulia}) => {
   return (
     <>
-    <ContentContainer id="julia-container" noFixedHeight={true}>
+    <ContentContainer id="julia-container">
         {showJulia && 
           <iframe
             id="julia-iframe"

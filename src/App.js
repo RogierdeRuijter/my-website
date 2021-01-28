@@ -3,123 +3,172 @@ import { useLocation, useHistory, Link } from 'react-router-dom';
 import CircleGame from './projects/CircleGame/CircleGame';
 import FishRace from './projects/FishRace/FishRace';
 import SleepingTumblrSeals from './projects/SleepingSeals/SleepingSeals';
-import { useEffect, useState, createRef } from 'react';
+import { useEffect, useState, createRef, useCallback } from 'react';
 import GetLow from './projects/GetLow/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
-import Info from './Info/Info';
+import Info from './projects/Info/Info';
 import Julia from './projects/Julia/Julia';
 import Welcome from './Welcome/Welcome';
 import Scrollspy from 'react-scrollspy'
 
-const App = ({}) => {
+const sectionsList = [
+  "/welcome",
+  "/fish-race",
+  "/circle-game",
+  "/montepoeli",
+  "/get-low",
+  "/sleeping-tumblr-seals",
+  "/julia",
+  "/info"
+];
+
+const sections = {
+  welcome: sectionsList[0],
+  fishRace: sectionsList[1],
+  circleGame: sectionsList[2],
+  montepoeli: sectionsList[3],
+  getLow: sectionsList[4],
+  sleepingTumblrSeals: sectionsList[5],
+  julia: sectionsList[6],
+  info: sectionsList[7]
+};
+
+const juliaIndex = () => sectionsList.findIndex((section) => section === sections.julia);
+
+const activeElementIsPassedJulia = (currentSection) => {
+  return sectionsList.findIndex((section) => section === currentSection) >= juliaIndex;
+}
+
+const addFadeInAnimationForProjectLinks = () => {
+  document.getElementById('project-links').classList.add('fade-in-animation');
+};
+
+const isScrolledIntoView = (el) => {
+  var rect = el.getBoundingClientRect();
+  var elemTop = rect.top;
+  var elemBottom = rect.bottom;
+
+  // Only completely visible elements return true:
+  var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+  return isVisible;
+}
+
+const App = () => {
   const location = useLocation();
   const history = useHistory();
-  // TODO: remove 
-  const [pathname, setPathname] = useState('');
-  const [showProjects, setShowProjects] = useState(false);
+  const [offset, setOffset] = useState(0);
+
+  const [showFishRace, setShowFishRace] = useState(false);
+  const [showCircleGame, setShowCirleGame] = useState(false);
+  const [showGetLow, setShowGetLow] = useState(false);
+  const [showSleepingTumblrSeals, setShowSleepingTumblrSeals] = useState(false);
+  const [showJulia, setShowJulia] = useState(false);
+  const [currentElement, setCurrentElement] = useState('');
+  
   const welcomeTextRef = createRef();
-  
-  // TODO: make this an object for better readability
-  const sections = [
-    "/fish-race",
-    "/circle-game",
-    "/montepoeli",
-    "/get-low",
-    "/sleeping-tumblr-seals",
-    "/julia",
-    "/info"
-  ];
-  
-  const scrollHandler = () => {
+
+  useEffect(() => {
+    // TODO: do this calculation on window resize
+    const screenHeight = window.innerHeight;
+    const offsetFactor = 0.7;
+
+    if (screenHeight) {
+      setOffset(screenHeight * offsetFactor * -1);
+    }
+  },[]);
+
+  const scrollHandler = useCallback(() => {
     const element = welcomeTextRef.current;
     if (element) {
       if (!isScrolledIntoView(element)) {
-        document.getElementById('menu').classList.add('fade-in-animation');
+        addFadeInAnimationForProjectLinks();
         window.removeEventListener('scroll', scrollHandler);
       }
     }
-  }
+  }, [welcomeTextRef]);
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler)  
-  })
-
-  useEffect(() => {
-    setPathname(location.pathname);
-
-    if (location.pathname === '/') {
-      history.push('/welcome');
+    if (welcomeTextRef && welcomeTextRef.current) {
+      window.addEventListener('scroll', scrollHandler);
     }    
-  }, [location]);
+  }, [welcomeTextRef, scrollHandler]);
 
-  const onUpdateMethod = (element) => {
-    console.log('in onUpdateMethod');
-    if (element && element.id && element.id === sections[0]) {
-      
+  useEffect(() => {
+    if (location.pathname === '/' || location.pathname === sections.welcome) {
+      history.push(sections.welcome);
+    } else {
+      addFadeInAnimationForProjectLinks();
     }
-    
-    // if (element && element.id === sections[1]) {
-    //   setShow(true);
-    // }
-  }
+  }, [location, history]);
 
-  function isScrolledIntoView(el) {
-    var rect = el.getBoundingClientRect();
-    var elemTop = rect.top;
-    var elemBottom = rect.bottom;
-
-    // Only completely visible elements return true:
-    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-    // Partially visible elements return true:
-    //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-    return isVisible;
-}
+  useEffect(() => {
+    if (currentElement && currentElement.id) {
+      if (currentElement.id === sections.fishRace) {
+        setShowFishRace(true);
+      }
+      if (currentElement.id === sections.circleGame) {
+        setShowCirleGame(true);
+      }
+      if (currentElement.id === sections.getLow) {
+        setShowGetLow(true);
+      }
+      if (currentElement.id === sections.sleepingTumblrSeals) {
+        setShowSleepingTumblrSeals(true);
+      }
+      // If the user scrolls past montepoeli early load julia, because it is a big section and the page jumps if julia lazy 
+      if (currentElement.id === sections.montepoeli || activeElementIsPassedJulia(currentElement.id)) {
+        setShowJulia(true);
+      }
+    }
+  }, [currentElement]);
 
   return (
     <div id="content-container">
       <div id="menu">
-        <div id="title">
-          <Link to={sections[0]}>
-            Rogier de Ruijter
-          </Link>
+        <div id="project-links">
+          <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={setCurrentElement} offset={offset}> 
+            <Link to={sections.welcome} id="title">
+                Rogier de Ruijter
+            </Link>
+            <Link to={sections.fishRace}>Fish race</Link>
+            <Link to={sections.circleGame}>Circle game</Link>
+            <Link to={sections.montepoeli}>Montepoeli</Link>
+            <Link to={sections.getLow}>Get low</Link>
+            <Link to={sections.sleepingTumblrSeals}>
+                Sleeping Tumblr Seals
+            </Link>
+            <Link to={sections.julia}>
+                Julia
+            </Link>
+            <Link to={sections.info}>
+                Info
+            </Link>
+          </Scrollspy>
         </div>
-        <Scrollspy className="menu" items={sections} currentClassName="active" onUpdate={onUpdateMethod}>
-          <Link to={sections[0]}>Fish race</Link>
-          <Link to={sections[1]}>Circle game</Link>
-          <Link to={sections[2]}>Montepoeli</Link>
-          <Link to={sections[3]}>Get low</Link>
-          <Link to={sections[4]}>
-              Sleeping Tumblr Seals
-          </Link>
-          <Link to={sections[5]}>
-              Julia
-          </Link>
-          <Link to={sections[6]}>
-              Info
-          </Link>
-        </Scrollspy>
       </div>
     <div id="project-content">
-      <Welcome welcomeTextRef={welcomeTextRef} />
-      <div className="empty-spacing" id={sections[0]}>
-        <FishRace />
+      <div id={sections.welcome}>
+        <Welcome welcomeTextRef={welcomeTextRef} />
       </div>
-      <div className="empty-spacing" id={sections[1]}>
-        <CircleGame />
+      <div className="empty-spacing" id={sections.fishRace}>
+        <FishRace showFishRace={showFishRace} />
       </div>
-      <div className="empty-spacing" id={sections[2]}>
+      <div className="empty-spacing" id={sections.circleGame}>
+        <CircleGame showCircleGame={showCircleGame} />
+      </div>
+      <div className="empty-spacing" id={sections.montepoeli}>
         <Montepoeli />
       </div>
-      <div className="empty-spacing" id={sections[3]}>
-        <GetLow />
+      <div className="empty-spacing" id={sections.getLow}>
+        <GetLow showGetLow={showGetLow} />
       </div>
-      <div className="empty-spacing" id={sections[4]}>
-        <SleepingTumblrSeals />
+      <div className="empty-spacing" id={sections.sleepingTumblrSeals}>
+        <SleepingTumblrSeals showSleepingTumblrSeals={showSleepingTumblrSeals} />
       </div>
-      <div className="empty-spacing" id={sections[5]}>
-        <Julia />
+      <div className="empty-spacing" id={sections.julia}>
+        <Julia showJulia={showJulia} />
       </div>
-      <div className="empty-spacing" id={sections[6]}>
+      <div className="empty-spacing" id={sections.info}>
         <Info />
       </div>
     </div>

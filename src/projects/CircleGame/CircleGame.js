@@ -1,15 +1,29 @@
 import './CircleGame.css';
+import Loader from '../../helpers/Loader/Loader';
+import DelayedLoadingFade from '../../helpers/DelayedLoadingFade/DelayedLoadingFade';
+import Description from '../../helpers/Description/Description';
+import ContentWithDescriptionContainer from '../../helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
 
-function CircleGame({showWebsite}) {
+function CircleGame({showCircleGame}) {
   return (
-    <div id="circle-game-container">
-      {/* {!showWebsite && <div style={{backgroundColor: 'gray', width: '100%', height: '100%'}}></div>} */}
-      <iframe src="https://circle-ga.me" loading="lazy" frameBorder="0" style={{borderRadius : '10px'}}></iframe>
-      {/* showWebsite */}
-      <div id="description">
-        The iterations have been endless. Thanks for the helping hand Lotte.
+    <ContentWithDescriptionContainer id="circle-game-container" loading={!showCircleGame}>
+      <div className="iframe-size">
+        <DelayedLoadingFade removeLoader={showCircleGame}>
+            <Loader />
+        </DelayedLoadingFade>
       </div>
-    </div>
+      {showCircleGame && 
+        <iframe id="circle-game-iframe" 
+                title="circle-game"
+                className="iframe-size" 
+                src="https://circle-ga.me" 
+                loading="lazy" 
+                frameBorder="0" 
+                style={{borderRadius : '10px'}}></iframe>}
+      <Description>
+        The iterations have been endless. Thanks for the helping hand Lotte.
+      </Description>
+    </ContentWithDescriptionContainer>
   );
 }
 

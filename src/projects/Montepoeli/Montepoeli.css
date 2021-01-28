@@ -1,21 +1,3 @@
-#montepoeli-content-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: '100%'; 
-  height: '100vh';
-  border-bottom: 1px solid black;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-#description {  
-  margin-top: min(50px, 5%);
-  font-style: italic;
-  text-align: right;
-}
-
 .rounded-corners {
   border-radius: 40px;
 }
@@ -30,4 +12,8 @@
 
 #montepoeli-content-container img {
   max-width: 100%;
+}
+
+#montepoeli-content {
+  grid-area: 1/1;
 }

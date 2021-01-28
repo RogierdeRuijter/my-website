@@ -1,26 +1,20 @@
 import './Julia.css';
-import { useEffect, useState } from 'react';
+import ContentContainer from '../../helpers/ContentContainer/ContentContainer';
 
-const Julia = () => {
-  const [ trueHeightIframe, setTrueHeightIframe ] = useState(null);
-  
-  useEffect(() => {
-      setTimeout(() => {
-        const juliaIframe = document.getElementById('julia-iframe');
-        // juliaIframe.style.height = 'auto';
-        // console.log("juliaIframe.contentWindow.document: ", juliaIframe.contentWindow);
-        setTrueHeightIframe(juliaIframe.offsetHeight);
-      }, 2000)
-      
-  }, []);
+const Julia = ({showJulia}) => {
   return (
-    <div id="julia-container">
-      <iframe
-        id="julia-iframe"
-        src="https://rogierderuijter.github.io/julia/" 
-        frameBorder="0">
-      </iframe>
-    </div>
+    <>
+    <ContentContainer id="julia-container">
+        {showJulia && 
+          <iframe
+            id="julia-iframe"
+            title="julia"
+            className="iframe-size"
+            src="https://rogierderuijter.github.io/julia/" 
+            frameBorder="0">
+          </iframe> }
+      </ContentContainer>
+    </>
   );
 }
 

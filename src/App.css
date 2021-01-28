@@ -11,12 +11,15 @@
   position: fixed;
   left: 0;
   top: 0;
-  opacity: 0;
 }
 
 .fade-in-animation {
   animation: 1s ease-in fadeIn forwards;
   -webkit-animation: 1s ease-in fadeIn forwards;
+}
+
+#project-links {
+  opacity: 0;
 }
 
 #project-content {
@@ -41,10 +44,8 @@
   margin-bottom: 30px;
 }
 
-#title a {
-  text-decoration: none;
-  color:black;
-  display: block;
+#title:hover {
+  background-color: unset !important;
 }
 
 #projects {

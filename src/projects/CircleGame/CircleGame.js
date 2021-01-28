@@ -1,5 +1,5 @@
 import './CircleGame.css';
-import Loader from '../../Loader/Loader';
+import Loader from '../../Helpers/Loader/Loader';
 import DelayedLoadingFade from '../../Helpers/DelayedLoadingFade/DelayedLoadingFade';
 import Description from '../../Helpers/Description/Description';
 import ContentWithDescriptionContainer from '../../Helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';

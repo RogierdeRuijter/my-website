@@ -87,8 +87,6 @@ const App = () => {
   const juliaIndex = useMemo(() => sectionsList.findIndex((section) => section === sections.julia), [sectionsList]);
 
   const activeElementIsPassedJulia = (currentSection) => {
-    console.log('juliaIndex');
-    console.log(juliaIndex);
     return sectionsList.findIndex((section) => section === currentSection) >= juliaIndex;
   }
 

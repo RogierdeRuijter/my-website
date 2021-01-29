@@ -3,7 +3,7 @@ import { useLocation, useHistory, Link } from 'react-router-dom';
 import CircleGame from './projects/CircleGame/CircleGame';
 import FishRace from './projects/FishRace/FishRace';
 import SleepingTumblrSeals from './projects/SleepingSeals/SleepingSeals';
-import { useEffect, useState, createRef, useCallback } from 'react';
+import { useEffect, useState, createRef, useCallback, useLayoutEffect } from 'react';
 import GetLow from './projects/GetLow/GetLow';
 import Montepoeli from './projects/Montepoeli/Montepoeli';
 import Info from './projects/Info/Info';
@@ -63,11 +63,12 @@ const App = () => {
   const [showGetLow, setShowGetLow] = useState(false);
   const [showSleepingTumblrSeals, setShowSleepingTumblrSeals] = useState(false);
   const [showJulia, setShowJulia] = useState(false);
+
   const [currentElement, setCurrentElement] = useState('');
   
   const welcomeTextRef = createRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // TODO: do this calculation on window resize
     const screenHeight = window.innerHeight;
     const offsetFactor = 0.7;
@@ -93,7 +94,7 @@ const App = () => {
     }    
   }, [welcomeTextRef, scrollHandler]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (location.pathname === '/' || location.pathname === sections.welcome) {
       history.push(sections.welcome);
     } else {
@@ -124,26 +125,28 @@ const App = () => {
 
   return (
     <div id="content-container">
-      <div id="menu">
-        <div id="project-links">
-          <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={setCurrentElement} offset={offset}> 
-            <Link to={sections.welcome} id="title">
-                Rogier de Ruijter
-            </Link>
-            <Link to={sections.fishRace}>Fish race</Link>
-            <Link to={sections.circleGame}>Circle game</Link>
-            <Link to={sections.montepoeli}>Montepoeli</Link>
-            <Link to={sections.getLow}>Get low</Link>
-            <Link to={sections.sleepingTumblrSeals}>
-                Sleeping Tumblr Seals
-            </Link>
-            <Link to={sections.julia}>
-                Julia
-            </Link>
-            <Link to={sections.info}>
-                Info
-            </Link>
-          </Scrollspy>
+      <div id="menu-container">
+        <div id="menu">
+          <div id="project-links">
+            <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={setCurrentElement} offset={offset}> 
+              <Link to={sections.welcome} id="title">
+                  Rogier de Ruijter
+              </Link>
+              <Link to={sections.fishRace}>Fish race</Link>
+              <Link to={sections.circleGame}>Circle game</Link>
+              <Link to={sections.montepoeli}>Montepoeli</Link>
+              <Link to={sections.getLow}>Get low</Link>
+              <Link to={sections.sleepingTumblrSeals}>
+                  Sleeping Tumblr Seals
+              </Link>
+              <Link to={sections.julia}>
+                  Julia
+              </Link>
+              <Link to={sections.info}>
+                  Info
+              </Link>
+            </Scrollspy>
+          </div>
         </div>
       </div>
     <div id="project-content">

@@ -11,6 +11,8 @@ import Julia from './projects/Julia/Julia';
 import Welcome from './Welcome/Welcome';
 import Scrollspy from 'react-scrollspy'
 
+const basePath = '/';
+
 const sectionsList = [
   "/welcome",
   "/fish-race",
@@ -33,11 +35,11 @@ const sections = {
   info: sectionsList[7]
 };
 
-const juliaIndex = () => sectionsList.findIndex((section) => section === sections.julia);
+const montepoeliIndex = () => sectionsList.findIndex((section) => section === sections.montepoeli);
 
-const activeElementIsPassedJulia = (currentSection) => {
-  return sectionsList.findIndex((section) => section === currentSection) >= juliaIndex;
-}
+const activeElementIsPasedMontepoeli = (currentSection) => 
+  sectionsList.findIndex((section) => section === currentSection) > montepoeliIndex();
+
 
 const addFadeInAnimationForProjectLinks = () => {
   document.getElementById('project-links').classList.add('fade-in-animation');
@@ -95,9 +97,9 @@ const App = () => {
   }, [welcomeTextRef, scrollHandler]);
 
   useLayoutEffect(() => {
-    if (location.pathname === '/' || location.pathname === sections.welcome) {
+    if (location.pathname === basePath) {
       history.push(sections.welcome);
-    } else {
+    } else if (!location.pathname === sections.welcome) {
       addFadeInAnimationForProjectLinks();
     }
   }, [location, history]);
@@ -117,11 +119,18 @@ const App = () => {
         setShowSleepingTumblrSeals(true);
       }
       // If the user scrolls past montepoeli early load julia, because it is a big section and the page jumps if julia lazy 
-      if (currentElement.id === sections.montepoeli || activeElementIsPassedJulia(currentElement.id)) {
+      if (currentElement.id === sections.montepoeli || activeElementIsPasedMontepoeli(currentElement.id)) {
         setShowJulia(true);
       }
     }
   }, [currentElement]);
+
+  useEffect(() => {
+    console.log(location.pathname[location.pathname.length - 1]);
+    if (location.pathname[location.pathname.length - 1] !== '/') {
+      history.push(location.pathname + '/')
+    }    
+  }, [history, location]);
 
   return (
     <div id="content-container">
@@ -129,10 +138,10 @@ const App = () => {
         <div id="menu">
           <div id="project-links">
             <Scrollspy className="menu" items={sectionsList} currentClassName="active" onUpdate={setCurrentElement} offset={offset}> 
-              <Link to={sections.welcome} id="title">
+              <Link to={sections.welcome} id="title" replace>
                   Rogier de Ruijter
               </Link>
-              <Link to={sections.fishRace}>Fish race</Link>
+              <Link to={sections.fishRace} replace>Fish race</Link>
               <Link to={sections.circleGame}>Circle game</Link>
               <Link to={sections.montepoeli}>Montepoeli</Link>
               <Link to={sections.getLow}>Get low</Link>

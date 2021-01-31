@@ -37,7 +37,7 @@ const sections = {
 
 const montepoeliIndex = () => sectionsList.findIndex((section) => section === sections.montepoeli);
 
-const activeElementIsPasedMontepoeli = (currentSection) => 
+const isCurrentElementPasedMontepoeli = (currentSection) => 
   sectionsList.findIndex((section) => section === currentSection) > montepoeliIndex();
 
 
@@ -119,14 +119,13 @@ const App = () => {
         setShowSleepingTumblrSeals(true);
       }
       // If the user scrolls past montepoeli early load julia, because it is a big section and the page jumps if julia lazy 
-      if (currentElement.id === sections.montepoeli || activeElementIsPasedMontepoeli(currentElement.id)) {
+      if (currentElement.id === sections.montepoeli || isCurrentElementPasedMontepoeli(currentElement.id)) {
         setShowJulia(true);
       }
     }
   }, [currentElement]);
 
   useEffect(() => {
-    console.log(location.pathname[location.pathname.length - 1]);
     if (location.pathname[location.pathname.length - 1] !== '/') {
       history.push(location.pathname + '/')
     }    

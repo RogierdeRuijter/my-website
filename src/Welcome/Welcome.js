@@ -6,7 +6,7 @@ function Welcome({welcomeTextRef}) {
       <div ref={welcomeTextRef} style={{fontSize: '4vw'}}>
         <div style={{textAlign: 'center'}}>
           <div>"Ik verdien mijn geld met letters"</div> 
-          <div>Otto<sup>✝</sup> en Rogier de Ruijter</div>
+          <div>Otto<sup>✝</sup> en Rogier - de Ruijter</div>
         </div>
       </div>
       <div id="scroll-down-element">

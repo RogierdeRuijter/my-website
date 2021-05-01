@@ -1,0 +1,13 @@
+.previous-text {
+  color: lightgray;
+  font-size: 18px
+}
+
+.active-text {
+  position: relative;
+}
+
+.next-text {
+  color: lightgray;
+  font-size: 18px
+}

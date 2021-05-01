@@ -1,6 +1,6 @@
 import './FishRace.css';
-import Description from '../../helpers/Description/Description';
 import ContentWithDescriptionContainer from '../../helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer';
+import ScrollingText from '../../ScrollingText/ScrollingText';
 
 function FishRace({showFishRace}) {
   return (
@@ -13,11 +13,9 @@ function FishRace({showFishRace}) {
           src="https://itisafishrace.xyz" 
           loading="lazy" 
           frameBorder="0"></iframe> }
-      <Description>
-        Created during a night filled with drinks by Daniel and me. 
-        Later refined by the people mentioned before and Joost. <br/>
-        Thank you guys for having many discussions on the soul of the fish race. 
-      </Description>
+          <div>
+            <ScrollingText project="fish-race"/>
+          </div>
     </ContentWithDescriptionContainer>
   );
 }

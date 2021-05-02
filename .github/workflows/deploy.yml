@@ -18,7 +18,7 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     - name: install and deploy 
       run: |
-        git config --global user.name 'Rogier de Ruijter'
+        git config --global user.name 'RogierdeRuijter'
         
         # git config --global user.email 'your-username@users.noreply.github.com'
         git config --global user.email 'rogierderuijter@hotmail.com'

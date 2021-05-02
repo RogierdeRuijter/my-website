@@ -2,28 +2,21 @@ on:
   push:
     branches:
       - "main"
-
-env:
-  NODE_VERSION: '12.x'     
-
+      
 jobs:
   build-and-deploy:
-    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-    - name: install and deploy 
-      run: |
-        git config --global user.name 'RogierdeRuijter'
-        
-        # git config --global user.email 'your-username@users.noreply.github.com'
-        git config --global user.email 'rogierderuijter@hotmail.com'
-        
-        # Install, build and 
-        yarn install
-        # npm test (Add this in when there are tests)
-        yarn deploy
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.

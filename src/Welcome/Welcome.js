@@ -10,6 +10,7 @@ function Welcome({welcomeTextRef}) {
           <video autoPlay muted width="640" height="480" poster={preloadFilm}>
             <source src={film} type="video/mp4" />
           </video>
+        </div>
       </div>
       <div id="scroll-down-element">
         <span id="scroll-down-element-line"></span>

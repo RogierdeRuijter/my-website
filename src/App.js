@@ -80,9 +80,8 @@ const App = () => {
 
   const welcomeTextRef = createRef();
 
-  const [moveVideoToLeftSideScreen, setMoveVideoToLeftSideScreen] = useState(
-    false
-  );
+  const [moveVideoToLeftSideScreen, setMoveVideoToLeftSideScreen] =
+    useState(false);
 
   useLayoutEffect(() => {
     // TODO: do this calculation on window resize

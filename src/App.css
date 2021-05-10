@@ -1,6 +1,9 @@
 #content-container {
   display: grid;
   grid-template-columns: min(30%, 200px) min(70%, 1200px);
+  
+  /* This is needed for the video */
+  position: relative;
 }
 
 #menu-container {
@@ -84,3 +87,15 @@
   0% {opacity: 0;}
   100% {opacity: 1;}
 } 
+
+.video-project-links {
+  position: fixed;
+  top: 50%;
+  left: 0;
+}
+
+
+.video-project-links video {
+  width: 20%;
+  height: 20%;
+}

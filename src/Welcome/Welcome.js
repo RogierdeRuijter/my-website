@@ -1,12 +1,15 @@
 import './Welcome.css';
+import film from '../assets/Film.mp4';
+import preloadFilm from '../assets/poster_Film.png';
 
 function Welcome({welcomeTextRef}) {
   return (
     <div id="welcome-container">
       <div ref={welcomeTextRef} style={{fontSize: '4vw'}}>
-        <div style={{textAlign: 'center'}}>
-          <div>"Ik verdien mijn geld met letters"</div> 
-          <div>Otto<sup>✝</sup> en Rogier - de Ruijter</div>
+        <div id="video">
+          <video autoPlay muted width="640" height="480" poster={preloadFilm}>
+            <source src={film} type="video/mp4" />
+          </video>
         </div>
       </div>
       <div id="scroll-down-element">

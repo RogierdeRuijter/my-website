@@ -80,8 +80,9 @@ const App = () => {
 
   const welcomeTextRef = createRef();
 
-  const [moveVideoToLeftSideScreen, setMoveVideoToLeftSideScreen] =
-    useState(false);
+  const [moveVideoToLeftSideScreen, setMoveVideoToLeftSideScreen] = useState(
+    false
+  );
 
   useLayoutEffect(() => {
     // TODO: do this calculation on window resize
@@ -116,7 +117,6 @@ const App = () => {
     } else {
       addFadeInAnimationForProjectLinks();
       // TODO: move video of me into the project link
-      console.log("in else");
       setMoveVideoToLeftSideScreen(true);
     }
   }, [location, history]);

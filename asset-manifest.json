@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.b62db976.chunk.css",
-    "main.js": "/static/js/main.0e2f43fb.chunk.js",
-    "main.js.map": "/static/js/main.0e2f43fb.chunk.js.map",
+    "main.js": "/static/js/main.cc6440a4.chunk.js",
+    "main.js.map": "/static/js/main.cc6440a4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3f01bb75.js",
     "runtime-main.js.map": "/static/js/runtime-main.3f01bb75.js.map",
     "static/js/2.e772312b.chunk.js": "/static/js/2.e772312b.chunk.js",
@@ -17,12 +17,12 @@
     "static/media/montepoeli_add_game.26af8d20.png": "/static/media/montepoeli_add_game.26af8d20.png",
     "static/media/montepoeli_add_game_filled.3103bcac.png": "/static/media/montepoeli_add_game_filled.3103bcac.png",
     "static/media/montepoeli_home.34b3358a.png": "/static/media/montepoeli_home.34b3358a.png",
-    "static/media/poster_Film.d7f79261.png": "/static/media/poster_Film.d7f79261.png"
+    "static/media/poster_Film.87944f5d.png": "/static/media/poster_Film.87944f5d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3f01bb75.js",
     "static/js/2.e772312b.chunk.js",
     "static/css/main.b62db976.chunk.css",
-    "static/js/main.0e2f43fb.chunk.js"
+    "static/js/main.cc6440a4.chunk.js"
   ]
 }

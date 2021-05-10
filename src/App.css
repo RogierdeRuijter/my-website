@@ -96,9 +96,11 @@
   position: fixed;
   top: 50%;
   left: 0;
+  width: 13%;
+  height: 10%;
 }
 
 .video-project-links video {
-  width: 20%;
-  height: 20%;
+  width: 100%;
+  height: 100%;
 }

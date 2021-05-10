@@ -60,7 +60,7 @@ describe("ScrollingText", () => {
     expect(thirdSentence_4).toHaveClass("previous-text");
   };
 
-  it.only("should show the fish race description in order", () => {
+  it("should show the fish race description in order", () => {
     render(<ScrollingText project="fish-race" />);
 
     const firstSentence_0 = screen.getByText(
@@ -74,7 +74,7 @@ describe("ScrollingText", () => {
     testFishRaceFlow();
   });
 
-  it.only("should be able to restart the fish race description when after it ends", () => {
+  it("should be able to restart the fish race description when after it ends", () => {
     render(<ScrollingText project="fish-race" />);
 
     const firstSentence_0 = screen.getByText(

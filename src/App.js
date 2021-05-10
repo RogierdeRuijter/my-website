@@ -16,6 +16,8 @@ import Info from "./projects/Info/Info";
 import Julia from "./projects/Julia/Julia";
 import Welcome from "./Welcome/Welcome";
 import Scrollspy from "react-scrollspy";
+import film from "./assets/Film.mp4";
+import preloadFilm from "./assets/poster_Film.png";
 
 const sectionsList = [
   "/welcome",
@@ -78,6 +80,10 @@ const App = () => {
 
   const welcomeTextRef = createRef();
 
+  const [moveVideoToLeftSideScreen, setMoveVideoToLeftSideScreen] = useState(
+    false
+  );
+
   useLayoutEffect(() => {
     // TODO: do this calculation on window resize
     const screenHeight = window.innerHeight;
@@ -92,6 +98,7 @@ const App = () => {
     const element = welcomeTextRef.current;
     if (element) {
       if (!isScrolledIntoView(element)) {
+        setMoveVideoToLeftSideScreen(true);
         addFadeInAnimationForProjectLinks();
         window.removeEventListener("scroll", scrollHandler);
       }
@@ -109,6 +116,8 @@ const App = () => {
       history.push(sections.welcome);
     } else {
       addFadeInAnimationForProjectLinks();
+      // TODO: move video of me into the project link
+      setMoveVideoToLeftSideScreen(true);
     }
   }, [location, history]);
 
@@ -166,7 +175,23 @@ const App = () => {
       </div>
       <div id="project-content">
         <div id={sections.welcome}>
-          <Welcome welcomeTextRef={welcomeTextRef} />
+          <Welcome welcomeTextRef={welcomeTextRef}>
+            {/* TODO: Move this somewhere else that it is clear that this is moved around the dom */}
+            <div
+              id="video-of-me"
+              className={moveVideoToLeftSideScreen ? "video-project-links" : ""}
+            >
+              <video
+                autoPlay
+                muted
+                width="640"
+                height="480"
+                poster={preloadFilm}
+              >
+                <source src={film} type="video/mp4" />
+              </video>
+            </div>
+          </Welcome>
         </div>
         <div className="empty-spacing" id={sections.fishRace}>
           <FishRace showFishRace={showFishRace} />

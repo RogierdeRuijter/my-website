@@ -1,26 +1,27 @@
 .info-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .info-content {
-    box-sizing: border-box;
-    background-color: pink;
-    width: 100%; 
-    max-width: 600px;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 20px;
+  box-sizing: border-box;
+  background-color: pink;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
 }
 
 .special-thanks li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-.special-thanks {   
-    margin-block-start: 5px;
-    padding-inline-start: 10px;
-    list-style: square inside url('data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==');
+.special-thanks {
+  margin-block-start: 5px;
+  padding-inline-start: 10px;
+  list-style: square inside
+    url("data:image/gif;base64,R0lGODlhBQAKAIABAAAAAP///yH5BAEAAAEALAAAAAAFAAoAAAIIjI+ZwKwPUQEAOw==");
 }

@@ -1,16 +1,16 @@
-import './ContentWithDescriptionContainer.css';
+import "./ContentWithDescriptionContainer.css";
 
 function ContentWithDescriptionContainer(props) {
   return (
     <div
-      id={props.id} 
+      id={props.id}
       className="content-container-with-description"
       style={{
-        height: props.noFixedHeightContent ? '' : '100vh',
-        gridTemplateRows: props.noFixedHeightContent ? 'auto 20%' : '80% 20%'
+        height: props.noFixedHeightContent ? "" : "100vh",
+        gridTemplateRows: props.noFixedHeightContent ? "auto 20%" : "80% 20%",
       }}
-        >
-      { props.children }
+    >
+      {props.children}
     </div>
   );
 }

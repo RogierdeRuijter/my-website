@@ -18,7 +18,7 @@ function FishRace({ showFishRace }) {
       )}
       {/* <div><ScrollingText project="fish-race" /></div> */}
       <div>
-        <Waveform />
+        <Waveform project="fish-race" />
       </div>
     </ContentWithDescriptionContainer>
   );

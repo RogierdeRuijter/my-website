@@ -2,7 +2,7 @@ import WaveSurfer from "wavesurfer.js";
 import fishRaceAudio from "../../assets/comment-fish-race.mp3";
 import { useEffect, useState } from "react";
 
-const Waveform = () => {
+const Waveform = ({ project }) => {
   const [wavesurfer, setWavesurfer] = useState();
   const [playing, setPlaying] = useState(false);
 
@@ -17,9 +17,14 @@ const Waveform = () => {
 
   useEffect(() => {
     if (wavesurfer) {
-      wavesurfer.load(fishRaceAudio);
+      let projectAudioFile;
+      if (project === "fish-race") {
+        projectAudioFile = fishRaceAudio;
+      }
+      
+      wavesurfer.load(projectAudioFile);
     }
-  }, [wavesurfer]);
+  }, [wavesurfer, project]);
 
   const toggleAudio = () => {
     setPlaying(!playing);

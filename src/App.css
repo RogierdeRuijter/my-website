@@ -1,9 +1,12 @@
 #content-container {
-  display: grid;
-  grid-template-columns: min(30%, 200px) min(70%, 1200px);
+  /* display: grid; */
+  /* grid-template-columns: min(30%, 200px) min(70%, 1200px); */
 
   /* This is needed for the video */
   position: relative;
+
+  width: 70%;
+  margin-left: 15%;
 }
 
 #menu-container {
@@ -13,13 +16,17 @@
 /* TODO: rename duplicate selector name */
 #menu {
   box-sizing: border-box;
-  width: 200px;
-  max-width: 30%;
+  width: 100%;
+  /* min-height: 30px; */
+  /* max-width: 30%; */
   padding-top: 10px;
-  padding-left: 10px;
+  padding-bottom: 10px;
+  /* padding-left: 10px; */
   position: fixed;
   left: 0;
   top: 0;
+  /* border-bottom: 1px solid black; */
+  z-index: 5;
 }
 
 .fade-in-animation {
@@ -32,9 +39,9 @@
 }
 
 #project-content {
-  grid-area: 1/2;
+  /* grid-area: 1/2;
   box-sizing: border-box;
-  padding-right: min(20px, 3%);
+  padding-right: min(20px, 3%); */
 }
 
 #project-content .empty-spacing {
@@ -43,7 +50,7 @@
 
 #title {
   font-weight: bold;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 #title:hover {
@@ -76,6 +83,10 @@
 
 .menu a:hover {
   background-color: lightpink;
+}
+
+ul {
+  margin: 0;
 }
 
 /* TODO: Figure out if this needs to be there */

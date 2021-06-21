@@ -146,31 +146,54 @@ const App = () => {
 
   return (
     <div id="content-container">
-      <div id="menu-container">
-        <div id="menu">
-          <div id="project-links">
-            <Scrollspy
-              className="menu"
-              items={sectionsList}
-              currentClassName="active"
-              onUpdate={setCurrentElement}
-              offset={offset}
-            >
-              <Link to={sections.welcome} id="title">
-                Rogier de Ruijter
-              </Link>
+      {/* <div id="menu-container"> */}
+      <div id="menu">
+        <Scrollspy
+          className="menu"
+          items={sectionsList}
+          currentClassName="active"
+          onUpdate={setCurrentElement}
+          offset={offset}
+        >
+          <div style={{ width: "10%", display: "inline-block" }}>
+            <Link to={sections.welcome} id="title">
+              Rogier de Ruijter
+            </Link>
+          </div>
+          <div
+            id="project-links"
+            style={{
+              width: "80%",
+              display: "inline-block",
+              textAlign: "center",
+            }}
+          >
+            {currentElement.id === sections.fishRace && (
               <Link to={sections.fishRace}>Fish race</Link>
+            )}
+            {currentElement.id === sections.circleGame && (
               <Link to={sections.circleGame}>Circle game</Link>
+            )}
+            {currentElement.id === sections.montepoeli && (
               <Link to={sections.montepoeli}>Montepoeli</Link>
+            )}
+            {currentElement.id === sections.getLow && (
               <Link to={sections.getLow}>Get low</Link>
+            )}
+            {currentElement.id === sections.sleepingTumblrSeals && (
               <Link to={sections.sleepingTumblrSeals}>
                 Sleeping Tumblr Seals
               </Link>
-              <Link to={sections.julia}>Julia</Link>
-              <Link to={sections.info}>Info</Link>
-            </Scrollspy>
+            )}
+            {/* Might not be needed if since Julia already has a title */}
+            {/* {currentElement.id === sections.julia && (
+                <Link to={sections.julia}>Julia</Link>
+              )} */}
+            {/* TODO: add show Info */}
+            {/* {showInfo && <Link to={sections.info}>Info</Link>} */}
           </div>
-        </div>
+        </Scrollspy>
+        {/* </div> */}
       </div>
       <div id="project-content">
         <div id={sections.welcome}>

@@ -93,6 +93,7 @@ const App = () => {
     }
   }, []);
 
+  // TODO: refactor this into custom hooks to remove some spagetti
   const scrollHandler = useCallback(() => {
     const element = welcomeTextRef.current;
     if (element) {
@@ -122,6 +123,9 @@ const App = () => {
 
   useEffect(() => {
     if (currentElement && currentElement.id) {
+      if (currentElement.id === sections.welcome) {
+        setMoveVideoToLeftSideScreen(false);
+      }
       if (currentElement.id === sections.fishRace) {
         setShowFishRace(true);
       }
@@ -183,9 +187,9 @@ const App = () => {
               <video
                 autoPlay
                 muted
-                width="640"
-                height="480"
-                poster={preloadFilm}
+                // width="640"
+                // height="480"
+                // poster={preloadFilm}
               >
                 <source src={film} type="video/mp4" />
               </video>

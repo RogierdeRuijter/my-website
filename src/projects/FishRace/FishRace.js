@@ -6,18 +6,18 @@ function FishRace({ showFishRace }) {
   return (
     <ContentWithDescriptionContainer id="fish-race-container">
       {showFishRace && (
-        <iframe
-          id="fish-race-iframe"
-          title="fish-race"
-          className="iframe-size"
-          src="https://itisafishrace.xyz"
-          loading="lazy"
-          frameBorder="0"
-        ></iframe>
+        <>
+          <iframe
+            id="fish-race-iframe"
+            title="fish-race"
+            className="iframe-size"
+            src="https://itisafishrace.xyz"
+            loading="lazy"
+            frameBorder="0"
+          ></iframe>
+          <Waveform project="fish-race" />
+        </>
       )}
-      <div>
-        <Waveform project="fish-race" />
-      </div>
     </ContentWithDescriptionContainer>
   );
 }

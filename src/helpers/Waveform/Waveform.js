@@ -27,12 +27,12 @@ const Waveform = () => {
   };
 
   return (
-    <>
-      <a style={{ display: "inline-block" }} onClick={toggleAudio}>
+    <div style={{ display: "flex", alignItems: "center" }}>
+      <a style={{ width: "50px", cursor: "pointer" }} onClick={toggleAudio}>
         {playing ? "Pause" : "Play"}
       </a>
-      <div id="waveform"></div>
-    </>
+      <div id="waveform" style={{ width: "80%", marginLeft: "10px" }}></div>
+    </div>
   );
 };
 

@@ -17,7 +17,6 @@ import Julia from "./projects/Julia/Julia";
 import Welcome from "./Welcome/Welcome";
 import Scrollspy from "react-scrollspy";
 import film from "./assets/Film.mp4";
-import preloadFilm from "./assets/poster_Film.png";
 
 const sectionsList = [
   "/welcome",

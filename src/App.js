@@ -184,13 +184,7 @@ const App = () => {
               id="video-of-me"
               className={moveVideoToLeftSideScreen ? "video-project-links" : ""}
             >
-              <video
-                autoPlay
-                muted
-                // width="640"
-                // height="480"
-                // poster={preloadFilm}
-              >
+              <video autoPlay muted>
                 <source src={film} type="video/mp4" />
               </video>
             </div>

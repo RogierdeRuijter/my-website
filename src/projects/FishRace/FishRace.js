@@ -1,6 +1,5 @@
 import "./FishRace.css";
 import ContentWithDescriptionContainer from "../../helpers/ContentWithDescriptionContainer/ContentWithDescriptionContainer";
-// import ScrollingText from "../../ScrollingText/ScrollingText";
 import Waveform from "../../helpers/Waveform/Waveform";
 
 function FishRace({ showFishRace }) {
@@ -16,7 +15,6 @@ function FishRace({ showFishRace }) {
           frameBorder="0"
         ></iframe>
       )}
-      {/* <div><ScrollingText project="fish-race" /></div> */}
       <div>
         <Waveform project="fish-race" />
       </div>

@@ -17,7 +17,6 @@ import Julia from "./projects/Julia/Julia";
 import Welcome from "./Welcome/Welcome";
 import Scrollspy from "react-scrollspy";
 import film from "./assets/Film.mp4";
-import preloadFilm from "./assets/poster_Film.png";
 
 const sectionsList = [
   "/welcome",
@@ -93,6 +92,7 @@ const App = () => {
     }
   }, []);
 
+  // TODO: refactor this into custom hooks to remove some spagetti
   const scrollHandler = useCallback(() => {
     const element = welcomeTextRef.current;
     if (element) {
@@ -122,6 +122,9 @@ const App = () => {
 
   useEffect(() => {
     if (currentElement && currentElement.id) {
+      if (currentElement.id === sections.welcome) {
+        setMoveVideoToLeftSideScreen(false);
+      }
       if (currentElement.id === sections.fishRace) {
         setShowFishRace(true);
       }
@@ -180,13 +183,7 @@ const App = () => {
               id="video-of-me"
               className={moveVideoToLeftSideScreen ? "video-project-links" : ""}
             >
-              <video
-                autoPlay
-                muted
-                width="640"
-                height="480"
-                poster={preloadFilm}
-              >
+              <video autoPlay muted>
                 <source src={film} type="video/mp4" />
               </video>
             </div>
